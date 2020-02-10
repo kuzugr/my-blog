@@ -9,7 +9,7 @@ import { ImageUploadModule } from 'angular2-image-upload';
 import { MarkdownModule, MarkdownService, MarkedOptions } from 'ngx-markdown';
 import { CreateArticleComponent } from './create-article.component';
 
-describe('CreateArticleComponent', () => {
+xdescribe('CreateArticleComponent', () => {
   let component: CreateArticleComponent;
   let fixture: ComponentFixture<CreateArticleComponent>;
 

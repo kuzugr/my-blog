@@ -9,7 +9,7 @@ import { ConfirmDialogService } from '../../shared/services/confirm-dialog.servi
 import { HttpClientModule } from '@angular/common/http';
 import { MarkdownModule } from 'ngx-markdown';
 
-describe('ArticleComponent', () => {
+xdescribe('ArticleComponent', () => {
   let component: ArticleComponent;
   let fixture: ComponentFixture<ArticleComponent>;
 

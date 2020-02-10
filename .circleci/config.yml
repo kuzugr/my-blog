@@ -65,7 +65,7 @@ jobs:
       - run: bundle exec rubocop
 
       - restore_cache: *restore_npm_packages_cache
-      - run: sudo npm install -g n && sudo n 10.9.0
+      - run: sudo npm install -g n && sudo n 10.17.0
       - run: cd client && sudo npm install -g yarn && sudo yarn global add @angular/cli@latest && sudo ng set --global packageManager=yarn && yarn
       - save_cache: *save_npm_packages_cache
 
