@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommentComponent } from './comment.component';
 import { ConfirmDialogService } from '../../shared/services/confirm-dialog.service';
 
-describe('CommentComponent', () => {
+xdescribe('CommentComponent', () => {
   let component: CommentComponent;
   let fixture: ComponentFixture<CommentComponent>;
 

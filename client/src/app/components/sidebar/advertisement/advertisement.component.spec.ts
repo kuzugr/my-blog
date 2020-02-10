@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdvertisementComponent } from './advertisement.component';
 import { SafeHtmlPipe } from '../../../shared/pipes/pipe.safehtml.pipe';
 
-describe('AdvertisementComponent', () => {
+xdescribe('AdvertisementComponent', () => {
   let component: AdvertisementComponent;
   let fixture: ComponentFixture<AdvertisementComponent>;
 
