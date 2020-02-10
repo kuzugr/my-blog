@@ -5721,12 +5721,10 @@ next-tick@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
 
-ng2-adsense@6.0.3:
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/ng2-adsense/-/ng2-adsense-6.0.3.tgz#664b33ce7af67d9fae231098693731389716a5b0"
-  integrity sha512-+QPjmrgLjNtLun7Ms7JpexGAm0wiveCumQwPElkiGRTQTLiXG5Gay5QN3mmSfYo9azfSILMpZEouO9oDI4PwhA==
-  dependencies:
-    tslib "^1.9.0"
+ng2-adsense@7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/ng2-adsense/-/ng2-adsense-7.0.0.tgz#b2ab7bab8944c442f5348944a31c70992eb60705"
+  integrity sha512-x1PBPa9Ovq/sUpAVOlPf2LGX+/pUoa8kVYdTM2Eae5Pv6TIk3CR5aRQhuuv+155VOq+0LrCjf5VaQQN+RV1ChA==
 
 ngx-markdown@8.2.1:
   version "8.2.1"
