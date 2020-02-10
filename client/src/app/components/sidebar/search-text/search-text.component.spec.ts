@@ -5,7 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { SearchTextComponent } from './search-text.component';
 
-describe('SearchTextComponent', () => {
+xdescribe('SearchTextComponent', () => {
   let component: SearchTextComponent;
   let fixture: ComponentFixture<SearchTextComponent>;
 

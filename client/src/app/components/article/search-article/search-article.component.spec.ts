@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { SearchArticleComponent } from './search-article.component';
 
-describe('SearchArticleComponent', () => {
+xdescribe('SearchArticleComponent', () => {
   let component: SearchArticleComponent;
   let fixture: ComponentFixture<SearchArticleComponent>;
 

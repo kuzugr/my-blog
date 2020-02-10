@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { SessionService } from './session.service';
 
-describe('SessionService', () => {
+xdescribe('SessionService', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
