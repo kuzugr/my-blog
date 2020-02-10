@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ConfirmDialogComponent } from './confirm-dialog.component';
 import { ConfirmDialogService } from '../../shared/services/confirm-dialog.service';
 
-describe('ConfirmDialogComponent', () => {
+xdescribe('ConfirmDialogComponent', () => {
   let component: ConfirmDialogComponent;
   let fixture: ComponentFixture<ConfirmDialogComponent>;
 
