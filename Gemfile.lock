@@ -1060,7 +1060,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.2)
     jmespath (1.4.0)
-    json (2.2.0)
+    json (2.3.0)
     jsonapi-renderer (0.2.2)
     kgio (2.11.3)
     listen (3.2.0)
