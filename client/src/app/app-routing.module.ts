@@ -9,9 +9,10 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { SearchArticleComponent } from './components/article/search-article/search-article.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { TopComponent } from './components/top/top.component';
 
 const routes: Routes = [
-  { path: '', component: ArticleComponent },
+  { path: '', component: TopComponent },
   { path: 'registration', component: CreateAccountComponent },
   { path: 'account', component: EditAccountComponent },
   { path: 'login', component: LoginComponent },
