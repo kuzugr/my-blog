@@ -1,3 +1,20 @@
+.search-items {
+  text-align: center;
+  width: 80%;
+  margin: 50px auto 0;
+}
+
+.search-text {
+  width: 70%;
+  margin-bottom: 50px;
+  outline: none;
+  cursor: pointer;
+}
+
+.search-text:focus {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5) inset;
+}
+
 .skills {
   padding: 80px 0;
   background-color: #fff;
