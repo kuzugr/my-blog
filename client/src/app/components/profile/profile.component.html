@@ -1,6 +1,6 @@
 <section class="about" id="profile">
   <h2 class="heading">PROFILE</h2>
-  <p class="about-text">
+  <p class="about-text" *ngIf="blogInformationLoaded">
     {{blogInformation.profile_text}}
   </p>
 </section>

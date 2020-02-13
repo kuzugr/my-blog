@@ -37,6 +37,8 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
 import { MonthlyArchiveComponent } from './components/sidebar/monthly-archive/monthly-archive.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { TopComponent } from './components/top/top.component';
+import { BlogsComponent } from './components/blogs/blogs.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,8 @@ import { TopComponent } from './components/top/top.component';
     MonthlyArchiveComponent,
     PrivacyPolicyComponent,
     TopComponent,
+    BlogsComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
