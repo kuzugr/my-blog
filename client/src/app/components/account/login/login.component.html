@@ -1,25 +1,11 @@
 <div class='login-body'>
-  <h2 class='title'>ログイン</h2>
-  <div class='form-block'>
+  <h2 class='heading'>ログイン</h2>
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <div class='login-part-first'>
-        <h4>メールアドレス</h4>
-        <input type="email" formControlName="email">
-        <div *ngIf="formErrors['email']" class="form-errors">
-          {{ formErrors['email'].join(" ") }}
-        </div>
-      </div>
-      <div class='login-part'>
-        <h4>パスワード</h4>
-        <input type="password" formControlName="password">
-        <button class='login-btn fa click-util' type="submit">
-          <i class="fa fa-sign-in" aria-hidden="true"></i> ログイン
-        </button>
-        <div *ngIf="formErrors['password']" class="form-errors">
-          {{ formErrors['password'].join(" ") }}
-        </div>
-        <p *ngIf="gotError" class='form-errors'>メールアドレスかパスワードが違います。</p>
-      </div>
+      <input type="email" placeholder="EMAIL" formControlName="email">
+      <input type="password" placeholder="PASSWORD" formControlName="password">
+      <button class='fa click-util' type="submit">
+        <i class="fa fa-sign-in" aria-hidden="true"></i> ログイン
+      </button>
+      <p *ngIf="gotError" class='form-errors'>メールアドレスかパスワードが違います。</p>
     </form>
-  </div>
 </div>

@@ -1,14 +1,15 @@
-<section class="skills">
+<section class="search" id='search'>
   <h2 class="heading">SEARCH</h2>
   <div class="search-items">
     <form>
       <input type="text" class="search-text" placeholder="Keyword">
     </form>
-    <div class="buttons">
-      <a class="button">カテゴリ</a>
-      <a class="button">カテゴリ</a>
-      <a class="button">カテゴリ</a>
-      <a class="button">カテゴリ</a>
+    <div class="buttons" *ngIf="categoryLoaded">
+      <ng-container *ngFor="let category of categories">
+        <a class="button" [routerLink]="['/search']" [queryParams]="{ category_id: category.id }">
+          {{category.name}}
+        </a>
+      </ng-container>
     </div>
   </div>
 </section>
