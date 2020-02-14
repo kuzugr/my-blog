@@ -2,7 +2,7 @@
 
 .article-body {
   width: 85%;
-  margin-left: 5%;
+  margin: auto;
 }
 
 .title {
@@ -113,8 +113,7 @@
 
 .change-article {
   max-width: 45%;
-  display: inline-block;
-  white-space: nowrap;
+  display: block;
   overflow: hidden;
   text-overflow: ellipsis;
   color: #337ab7;
@@ -126,10 +125,40 @@
 }
 
 .next-article {
-  text-align: right;
   float: right;
+  margin-right: 5%;
 }
 
 .previous-artcile {
+  float: left;
   margin-left: 5%;
+}
+
+.other-articles .button {
+  width: 400px;
+  height: 50px;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .other-articles .button {
+    width: 130px;
+  }
+
+  .next-article {
+    margin-right: 3%;
+  }
+
+  .previous-artcile {
+    margin-left: 3%;
+  }
 }

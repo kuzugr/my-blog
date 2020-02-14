@@ -24,15 +24,17 @@
       <div class='content'>
         <markdown [data]='article.html_content'></markdown>
       </div>
-      <span *ngIf="article.previous_id" routerLink="/article/{{article.previous_id}}"
-        class='change-article previous-artcile click-util' fragment='top'>
-        <i class="fa fa-angle-double-left"></i> {{article.previous_title}}
-      </span>
-      <span *ngIf="article.next_id" routerLink="/article/{{article.next_id}}"
-        class='change-article next-article click-util' fragment='top'>
-        {{article.next_title}} <i class="fa fa-angle-double-right"></i>
-      </span>
     </div>
+  </div>
+  <div class="other-articles clearfix">
+    <span *ngIf="article.previous_id" routerLink="/article/{{article.previous_id}}"
+        class='button change-article previous-artcile click-util' fragment='top'>
+        {{article.previous_title}}
+    </span>
+    <span *ngIf="article.next_id" routerLink="/article/{{article.next_id}}"
+      class='button change-article next-article click-util' fragment='top'>
+      {{article.next_title}}
+    </span>
   </div>
   <app-comment [articleId]="article.id" [comments]="article.comments">
   </app-comment>
