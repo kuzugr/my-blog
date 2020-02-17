@@ -13,53 +13,21 @@
 .blog-box {
   position: relative;
   display: table-cell;
-  max-height: 216px;
-}
-
-.blog-box::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  max-width: 360px;
-  height: 50%;
-  max-height: 216px;
-  background: no-repeat;
-  background-size: 100% 100%;
-  opacity: 0.2;
-  transform: scaleY(-1);
-}
-
-.blog-box.coding::after {
-  background-image: url('assets/images/coding.jpg');
-}
-
-.blog-box:nth-child(odd) .blog-image {
-  margin: 60% 0 0;
-}
-
-.blog-box:nth-child(odd) .blog-description,
-.blog-box:nth-child(odd)::after {
-  top: 0;
 }
 
 .blog-image {
   display: block;
   width: 100%;
-  max-width: 360px;
-  max-height: 216px;
-  margin: 0 0 60%;
+  height: 450%;
+  opacity: 0.7;
 }
 
 .blog-description {
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 0;
   z-index: 1;
   width: 100%;
-  max-width: 360px;
-  max-height: 216px;
   height: 50%;
   overflow-y: auto;
 }
@@ -90,18 +58,21 @@
     display: block;
   }
 
+  .blog-box {
+    margin-bottom: 10px;
+  }
+
   .blog-image {
-    display: none;
+    height: 150px;
+    object-fit: cover;
   }
 
   .blog-description {
-    position: relative;
-  }
-
-  .blog-box::after {
     top: 0;
     height: 100%;
-    background-size: cover;
-    transform: none;
+  }
+
+  .blog-description-inner {
+    padding: 0;
   }
 }
