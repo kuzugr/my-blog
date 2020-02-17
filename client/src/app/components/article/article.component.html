@@ -25,16 +25,18 @@
         <markdown [data]='article.html_content'></markdown>
       </div>
     </div>
-  </div>
-  <div class="other-articles clearfix">
-    <span *ngIf="article.previous_id" routerLink="/article/{{article.previous_id}}"
-        class='button change-article previous-artcile click-util' fragment='top'>
-        {{article.previous_title}}
-    </span>
-    <span *ngIf="article.next_id" routerLink="/article/{{article.next_id}}"
-      class='button change-article next-article click-util' fragment='top'>
-      {{article.next_title}}
-    </span>
+    <div class="other-articles">
+      <div class="prev-next-link">
+        <a class="prev-link" *ngIf="article.previous_id" routerLink="/article/{{article.previous_id}}">
+          <p class="prev-next-label">前の記事</p>
+          <p>{{article.previous_title}}</p>
+        </a>
+        <a class="next-link" *ngIf="article.next_id" routerLink="/article/{{article.next_id}}">
+          <p class="prev-next-label">次の記事</p>
+          <p>{{article.next_title}}</p>
+        </a>
+      </div>
+    </div>
   </div>
   <app-comment [articleId]="article.id" [comments]="article.comments">
   </app-comment>
