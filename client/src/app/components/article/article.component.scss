@@ -161,4 +161,10 @@
   .previous-artcile {
     margin-left: 3%;
   }
+
+  ::ng-deep .content {
+    img {
+      max-width: 180px;
+    }
+  }
 }
