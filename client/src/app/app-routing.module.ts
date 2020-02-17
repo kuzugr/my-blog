@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
   {
-    path: 'article', component: ArticleComponent,
+    path: 'article',
     children: [
       { path: 'create', component: CreateArticleComponent },
       { path: ':article_id', component: ArticleComponent },
@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: 'search', component: SearchArticleComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
-  { path: '**', component: ArticleComponent },
+  { path: '**', component: TopComponent },
 ];
 
 @NgModule({
