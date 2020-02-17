@@ -17,7 +17,6 @@ export class ArticleComponent implements OnInit {
   articleLoaded: boolean;
   loginState: boolean;
   articleId: number;
-  blogTitle = environment.title;
   isDisabled: boolean;
 
   constructor(

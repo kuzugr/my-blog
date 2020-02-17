@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleService } from '../../shared/services/article.service';
+import { Article } from '../../shared/models/article';
 
 @Component({
   selector: 'app-blogs',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blogs.component.scss'],
 })
 export class BlogsComponent implements OnInit {
+  articles: Array<Article>;
+  articleLoaded: boolean;
 
-  constructor() { }
+  constructor(private articleService: ArticleService) { }
 
   ngOnInit() {
+    this.articleLoaded = false;
+    this.getLatestArticles();
+  }
+
+  getLatestArticles() {
+    this.articleService.getArticles({ limit: 4 }).subscribe((response) => {
+      if (response.length > 0) {
+        this.articles = response;
+        this.articleLoaded = true;
+      }
+    });
   }
 
 }

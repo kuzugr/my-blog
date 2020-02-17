@@ -1,109 +1,104 @@
-.works {
+.blogs {
   background-attachment: #383634;
   padding: 80px 0;
 }
 
-.works-wrapper {
+.blogs-wrapper {
   display: table;
   width: 100%;
   margin-top: 60px;
   table-layout: fixed;
 }
 
-.work-box {
+.blog-box {
   position: relative;
   display: table-cell;
+  max-height: 216px;
 }
 
-.work-box::after {
+.blog-box::after {
   content: '';
   position: absolute;
   top: 50%;
   left: 0;
   width: 100%;
+  max-width: 360px;
   height: 50%;
+  max-height: 216px;
   background: no-repeat;
   background-size: 100% 100%;
   opacity: 0.2;
   transform: scaleY(-1);
 }
 
-.work-box.tree::after {
-  background-image: url('assets/images/tree.jpg');
+.blog-box.coding::after {
+  background-image: url('assets/images/coding.jpg');
 }
 
-.work-box.building::after {
-  background-image: url('assets/images/building.jpg');
-}
-
-.work-box.lake::after {
-  background-image: url('assets/images/lake.jpg');
-}
-
-.work-box.sky::after {
-  background-image: url('assets/images/sky.jpg');
-}
-
-.work-box:nth-child(odd) .work-image {
+.blog-box:nth-child(odd) .blog-image {
   margin: 60% 0 0;
 }
 
-.work-box:nth-child(odd) .work-description,
-.work-box:nth-child(odd)::after {
+.blog-box:nth-child(odd) .blog-description,
+.blog-box:nth-child(odd)::after {
   top: 0;
 }
 
-.work-image {
+.blog-image {
   display: block;
   width: 100%;
+  max-width: 360px;
+  max-height: 216px;
   margin: 0 0 60%;
 }
 
-.work-description {
+.blog-description {
   position: absolute;
   top: 50%;
   left: 0;
   z-index: 1;
   width: 100%;
+  max-width: 360px;
+  max-height: 216px;
   height: 50%;
   overflow-y: auto;
 }
 
-.work-description-inner {
+.blog-description-inner {
   display: table;
   width: 100%;
   height: 100%;
   padding: 20px;
 }
 
-.work-text {
+.blog-text {
   display: table-cell;
   vertical-align: middle;
   font-size: 1.2rem;
   line-height: 2;
 }
 
-.work-text .button {
+.blog-text .button {
   width: 60%;
   margin-top: 20px;
   padding: 3px;
 }
 
 @media (max-width: 768px) {
-  .works-wrapper,
-  .work-box {
+  .blogs-wrapper,
+  .blog-box {
     display: block;
   }
 
-  .work-image {
+  .blog-image {
     display: none;
   }
 
-  .work-description {
+  .blog-description {
     position: relative;
   }
 
-  .work-box::after {
+  .blog-box::after {
     top: 0;
     height: 100%;
     background-size: cover;
