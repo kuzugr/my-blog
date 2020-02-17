@@ -8,7 +8,7 @@
           <div class="blog-description-inner">
             <p class="blog-text">
               {{article.description}}<br>
-              <a href="ariticle/{{article.id}}" class="button button-ghost">READ ME</a>
+              <a [routerLink]="['/ariticle', article.id]" class="button button-ghost">READ ME</a>
             </p>
           </div>
         </div>

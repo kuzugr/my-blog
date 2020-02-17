@@ -1,8 +1,8 @@
 <section class="search" id='search'>
   <h2 class="heading">SEARCH</h2>
   <div class="search-items">
-    <form>
-      <input type="text" class="search-text" placeholder="Keyword">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input type="text" formControlName='keyword' class="search-text" placeholder="Keyword">
     </form>
     <div class="buttons" *ngIf="categoryLoaded">
       <ng-container *ngFor="let category of categories">

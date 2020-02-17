@@ -1,13 +1,15 @@
 <header class="header">
   <p class="site-title-sub">kuzugr's BLOG</p>
-  <h1 class="site-title">{{this.title}}</h1>
+  <a class='site-title-a' [routerLink]="['/']">
+    <h1 class="site-title">{{this.title}}</h1>
+  </a>
   <p class="site-description">Webエンジニアの私が技術に関する記事を書いていくブログです。</p>
   <div class="buttons">
-    <a class="button" href="#profile">PROFILE</a>
-    <a class="button button-showy" href="#blogs">BLOGS</a>
-    <a class="button" href="#search">SEARCH</a>
-    <a class="button button-showy" href="#contact">CONTACT</a>
-    <a class="button" href="/privacy-policy">PRIVACY POLICY</a>
-    <a class="button button-showy" href="/article/create" *ngIf="loginState">CREATE</a>
+    <a class="button" [routerLink]="['/']" fragment="profile">PROFILE</a>
+    <a class="button button-showy" [routerLink]="['/']" fragment="blogs">BLOGS</a>
+    <a class="button"[routerLink]="['/']" fragment="search">SEARCH</a>
+    <a class="button button-showy" [routerLink]="['/']" fragment="contact">CONTACT</a>
+    <a class="button" [routerLink]="['/privacy-policy']">PRIVACY POLICY</a>
+    <a class="button button-showy" [routerLink]="['/article/create']" *ngIf="loginState">CREATE</a>
   </div>
 </header>
