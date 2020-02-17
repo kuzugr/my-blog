@@ -1,104 +1,89 @@
-@import '../.././../assets/styles/mixins';
-
-h3 {
-  border-bottom: solid 1px;
-}
-
-.comment-body {
-  margin-top: 15%;
+.comment {
+  padding: 80px 0 150px;
   width: 85%;
-  margin-left: 9%;
-}
-
-.comment-list {
-  margin-left: 2%;
-}
-
-.comment-part-first {
-  margin-top: 8%;
-}
-
-.comment-part {
-  margin-top: 2%;
-
-  textarea {
-    border: 1px solid #ccc;
-  }
-}
-
-.comment-name {
-  border: 1px solid #ccc;
-  width: 25%;
-
-  @include respond-to(smartphone) {
-    width: 60%;
-  }
-}
-
-.comment-button {
-  color: #fff;
-  border-color: #1a3d66;
-  background-color: #214d7f;
-  border-radius: 4px;
-  font-weight: 700;
-  width: 10rem;
-  height: 4rem;
-}
-
-.comment-button:hover {
-  background-color: #0044cc;
-  border: solid 1px #0044cc;
-}
-
-.disabled {
-  color: #ccc;
-  border-color: #eee;
-  background-color: #eee;
-  cursor: not-allowed;
-}
-
-.commented-content {
-  margin-top: 0.5%;
-  border: 1px solid #ccc;
-  padding: 10px;
-  width: 90%;
-  white-space: pre-wrap;
-  word-break: break-word;
-}
-
-.commented-name {
-  font-weight: bold;
-}
-
-.comented-date {
-  float: right;
-  margin-right: 10%;
+  margin: auto;
+  text-align: left;
 }
 
 .commented-div {
-  margin-top: 2.5%;
+  padding: 30px;
+  margin-bottom: 30px;
 }
 
-.delete-btn {
-  float: right;
+.commented-name-and-date {
+  margin-bottom: 5px;
+}
+
+.commented-name {
+  margin-right: 15px;
+}
+
+.commmented-content {
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+.comment-form {
+  width: 60%;
+  padding: 30px;
+  margin-top: 100px;
+}
+
+.comment-form input[type=text],
+.comment-form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.05);
   color: #fff;
-  border-color: #d24d4d;
-  background-color: #d24d4d;
-  border-radius: 4px;
-  font-weight: 700;
 }
 
-.delete-btn:hover {
-  background-color: red;
-  border: solid 1px red;
+.comment-form input[type=text] {
+  width: 49%;
 }
 
-.content {
-  @include respond-to(smartphone) {
-    width: 90%;
+.comment-form input[type=text] {
+  margin-right: 2%;
+}
+
+.comment-form textarea {
+  display: block;
+}
+
+.comment-form input[type=text]:focus,
+.comment-form textarea:focus {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5) inset;
+}
+
+.comment-form textarea {
+  height: 150px;
+}
+
+.comment-form input[type=submit] {
+  display: block;
+  width: 200px;
+  margin: 40px auto 0;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.comment-form input[type=submit]:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 768px) {
+  .comment-form {
+    width: 100%;
   }
 
-  @include respond-to(tablet) {
-    width: 90%;
+  .comment {
+    padding-bottom: 80px;
   }
 }
