@@ -16,5 +16,4 @@ export class ScrollTopButtonComponent implements OnInit {
   scrollToTop() {
     this.router.navigate([], { fragment: '' });
   }
-
 }
