@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
   {
-    path: 'article',
+    path: 'article', component: ArticleComponent,
     children: [
       { path: 'create', component: CreateArticleComponent },
       { path: ':article_id', component: ArticleComponent },
