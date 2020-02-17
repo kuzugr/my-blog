@@ -1,5 +1,6 @@
 <section class="blogs" id='blogs'>
   <h2 class="heading">BLOGS</h2>
+  <h4 class='blogs-message'>最新の記事はこちら</h4>
   <div class="blogs-wrapper">
     <ng-container *ngFor="let article of articles">
       <div class="blog-box coding">
@@ -8,7 +9,7 @@
           <div class="blog-description-inner">
             <p class="blog-text">
               {{article.description}}<br>
-              <a [routerLink]="['/ariticle', article.id]" class="button button-ghost">READ ME</a>
+              <a [routerLink]="['/article', article.id]" class="button button-ghost">READ ME</a>
             </p>
           </div>
         </div>
