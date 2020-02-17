@@ -39,6 +39,7 @@ import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-poli
 import { TopComponent } from './components/top/top.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { SearchComponent } from './components/search/search.component';
+import { ScrollTopButtonComponent } from './components/scroll-top-button/scroll-top-button.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { SearchComponent } from './components/search/search.component';
     TopComponent,
     BlogsComponent,
     SearchComponent,
+    ScrollTopButtonComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
