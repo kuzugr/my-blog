@@ -7,7 +7,7 @@
   margin: 50px auto 0;
 }
 
-.contact-form input[type=text],
+.contact-form input[type='text'],
 .contact-form textarea {
   display: block;
   width: 100%;
@@ -20,7 +20,7 @@
   color: #fff;
 }
 
-.contact-form input[type=text]:focus,
+.contact-form input[type='text']:focus,
 .contact-form textarea:focus {
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.5) inset;
 }
@@ -29,7 +29,7 @@
   height: 150px;
 }
 
-.contact-form input[type=submit] {
+.contact-form input[type='submit'] {
   display: block;
   width: 200px;
   margin: 40px auto 0;
@@ -41,7 +41,7 @@
   cursor: pointer;
 }
 
-.contact-form input[type=submit]:hover {
+.contact-form input[type='submit']:hover {
   background-color: rgba(255, 255, 255, 0.05);
 }
 

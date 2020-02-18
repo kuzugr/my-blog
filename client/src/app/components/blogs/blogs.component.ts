@@ -11,7 +11,7 @@ export class BlogsComponent implements OnInit {
   articles: Array<Article>;
   articleLoaded: boolean;
 
-  constructor(private articleService: ArticleService) { }
+  constructor(private articleService: ArticleService) {}
 
   ngOnInit() {
     this.articleLoaded = false;
@@ -26,5 +26,4 @@ export class BlogsComponent implements OnInit {
       }
     });
   }
-
 }

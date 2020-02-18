@@ -7,11 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./scroll-top-button.component.scss'],
 })
 export class ScrollTopButtonComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   scrollToTop() {
     this.router.navigate([], { fragment: '' });

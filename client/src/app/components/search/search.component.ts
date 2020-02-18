@@ -22,10 +22,7 @@ export class SearchComponent implements OnInit {
     },
   };
 
-  constructor(
-    private categoryService: CategoryService,
-    private router: Router,
-  ) { }
+  constructor(private categoryService: CategoryService, private router: Router) {}
 
   ngOnInit() {
     this.categoryLoaded = false;
