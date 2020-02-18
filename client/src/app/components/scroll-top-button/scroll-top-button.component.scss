@@ -4,7 +4,7 @@
   position: fixed;
   right: 0;
   bottom: 0;
-  background-color: #f1b400;
+  background-color: rgba(255, 255, 255, 0.15);
   opacity: 0.6;
   border-radius: 50%;
   cursor: pointer;
@@ -48,4 +48,24 @@
   left: 0;
   margin: auto;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .page-top,
+  .page-top a {
+    width: 48px;
+    height: 48px;
+  }
+
+  .page-top .arrow {
+    width: 13px;
+    height: 13px;
+    font-size: 13px;
+    top: -30px;
+  }
+
+  .page-top .page-top-text {
+    font-size: 3px;
+    top: 18px;
+  }
 }
