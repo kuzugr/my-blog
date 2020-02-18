@@ -14,7 +14,8 @@
         "serve:ssr": "node dist/server",
         "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
         "build:client-and-server-bundles": "ng build --prod && ng run client:server:production",
-        "format:check": "prettier --config .prettierrc.json --list-different \"src/{app,environments}/**/*{.ts,.js,.json,.css,.scss}\""
+        "format:check": "prettier --config .prettierrc.json --list-different \"src/{app,environments}/**/*{.ts,.js,.json,.css,.scss}\"",
+        "format:fix": "prettier --config .prettierrc.json --list-different \"src/{app,environments}/**/*{.ts,.js,.json,.css,.scss}\" --write"
     },
     "private": true,
     "dependencies": {
