@@ -1,56 +1,21 @@
-@import '../../../assets/styles/mixins';
-
-h2 {
-  border-bottom: 1px solid black;
+.about {
+  padding: 50px 30px;
+  background-color: #fff;
+  color: #333;
 }
 
-.profile-body {
-  width: 70%;
-
-  @include respond-to(smartphone) {
-    width: 85%;
-  }
-
-  text-align: left;
-  margin-left: 5%;
-  margin-top: 10%;
+.about-text {
+  margin: 30px 0;
+  line-height: 2.5;
+  white-space: pre-wrap;
 }
 
-ul {
-  margin-left: 5%;
-  list-style: none;
-  padding-left: 0;
-  word-wrap: break-word;
+.about a {
+  margin-right: 10px;
 }
 
-.profile-ul {
-  margin-left: 5%;
-
-  h4 {
-    margin: 0;
-    margin-bottom: 0.8rem;
-  }
-
-  span {
-    font-size: 16px;
-  }
-
-  .kuzugr-icon {
-    width: 20rem;
-    height: 20rem;
-    border-radius: 4px;
-  }
-
-  .icon-li {
-    margin-bottom: 1rem;
-  }
-
-  .li {
-    margin-bottom: 2rem;
-  }
-
-  .profile-text {
-    width: 90%;
-    white-space: pre-wrap;
+@media (max-width: 768px) {
+  .about-text {
+    line-height: 1.8;
   }
 }

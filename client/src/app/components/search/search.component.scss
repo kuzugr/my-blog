@@ -1,0 +1,31 @@
+.search-items {
+  text-align: center;
+  width: 80%;
+  margin: 50px auto 0;
+}
+
+.search-items .search-text {
+  width: 70%;
+  height: 35px;
+  font-size: 2rem;
+  margin-bottom: 50px;
+  outline: none;
+  cursor: pointer;
+}
+
+.search-text:focus {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5) inset;
+}
+
+.search {
+  padding: 80px 0;
+  background-color: #fff;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .search-items .search-text {
+    font-size: 1.5rem;
+    border: 1px solid rgb(167, 158, 158);
+  }
+}

@@ -36,6 +36,12 @@ import { ConfirmDialogService } from './shared/services/confirm-dialog.service';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { MonthlyArchiveComponent } from './components/sidebar/monthly-archive/monthly-archive.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { TopComponent } from './components/top/top.component';
+import { BlogsComponent } from './components/blogs/blogs.component';
+import { SearchComponent } from './components/search/search.component';
+import { ScrollTopButtonComponent } from './components/scroll-top-button/scroll-top-button.component';
+import { SearchResultComponent } from './components/search-result/search-result.component';
+import { ArticleCardComponent } from './shared/components/article-card/article-card.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +68,12 @@ import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-poli
     ConfirmDialogComponent,
     MonthlyArchiveComponent,
     PrivacyPolicyComponent,
+    TopComponent,
+    BlogsComponent,
+    SearchComponent,
+    ScrollTopButtonComponent,
+    SearchResultComponent,
+    ArticleCardComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

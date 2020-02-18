@@ -1,0 +1,7 @@
+<app-search></app-search>
+<section class="search-result" id='search-result'>
+  <h2 class="heading">SEARCH RESULTS</h2>
+  <p *ngIf="searchTypeLoaded">{{searcyType}}：{{searchTypeValue}}</p>
+  <app-article-card [articles]="this.articles" *ngIf="articleLoaded">
+  </app-article-card>
+</section>

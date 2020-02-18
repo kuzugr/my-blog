@@ -886,10 +886,17 @@
     tree-kill "1.2.1"
     webpack-sources "1.4.3"
 
-"@nguniversal/express-engine@8.2.6":
-  version "8.2.6"
-  resolved "https://registry.yarnpkg.com/@nguniversal/express-engine/-/express-engine-8.2.6.tgz#3930551727b5be1256f0aefa1ffd3c37cb420f9f"
-  integrity sha512-IKUKTpesgjYyB0Xg+fFhSbwbGBJhG0Wfn8MkQAi9RgSi8QsrSMkI3oUXc86Z7fpQL55D/ZIH7PekoC0Fmh/kxA==
+"@nguniversal/common@9.0.0":
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/@nguniversal/common/-/common-9.0.0.tgz#11e8f050b4add11dc808d62726ce77b58e6a105b"
+  integrity sha512-tiTklXiXqRad2fvcH4Rar8AofHeiBNkYuwXobGxnC9Xzmc2gG9DaNF5hC8wxT2FkbYAS1+NA/bpS4R7t6DfYfw==
+
+"@nguniversal/express-engine@9.0.0":
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/@nguniversal/express-engine/-/express-engine-9.0.0.tgz#06badf0ac8e2a1d9d210d8077a1e5ae3539ae593"
+  integrity sha512-2HOzC7Jb9kxAskXkvH6BO+u3PqmCCkNjoZBpwrM4zoXjuVdlwSl7YAXLpg24pXhYmto7m7j7P+lvpRXYxV2Zjw==
+  dependencies:
+    "@nguniversal/common" "9.0.0"
 
 "@nguniversal/module-map-ngfactory-loader@8.2.6":
   version "8.2.6"
@@ -936,10 +943,10 @@
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.3.0.tgz#6b0e4b0192367d77e438ff660ccc4487c9602e7b"
 
-"@types/jasmine@3.5.3":
-  version "3.5.3"
-  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.5.3.tgz#e41ba279166d3838e68aa34738dd890c846ee3f8"
-  integrity sha512-LRJ21f/BO4QNZ3YDaMP0OEurOfE77x8mi8MfEnUsei5IKfmZL0GKl7juhABMdUIJHhVS9OCLotKHfsFNAuJ+DA==
+"@types/jasmine@3.5.4":
+  version "3.5.4"
+  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.5.4.tgz#8f9b7b03cc6204d2048b08128dac1f341bfe0591"
+  integrity sha512-Uc/obv/lRh1t6RMOV6wkiAfYSZ0AOSTJqVl0Th8bHFcDhw4rQ0L60sxVnmOJj+RXbVboAE1Fd/mBclQWARRAsQ==
 
 "@types/jasminewd2@2.0.8":
   version "2.0.8"
@@ -948,10 +955,10 @@
   dependencies:
     "@types/jasmine" "*"
 
-"@types/marked@^0.6.5":
-  version "0.6.5"
-  resolved "https://registry.yarnpkg.com/@types/marked/-/marked-0.6.5.tgz#3cf2a56ef615dad24aaf99784ef90a9eba4e29d8"
-  integrity sha512-6kBKf64aVfx93UJrcyEZ+OBM5nGv4RLsI6sR1Ar34bpgvGVRoyTgpxn4ZmtxOM5aDTAaaznYuYUH8bUX3Nk3YA==
+"@types/marked@^0.7.0":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@types/marked/-/marked-0.7.2.tgz#1393f076773b55cc7078c0fbeb86a497c69db97e"
+  integrity sha512-A3EDyNaq6OCcpaOia2HQ/tu2QYt8DKuj4ExP21VU3cU3HTo2FLslvbqa2T1vux910RHvuSVqpwKnnykSFcRWOA==
 
 "@types/minimatch@*":
   version "3.0.3"
@@ -5047,10 +5054,10 @@ karma-jasmine-html-reporter@1.5.2:
   resolved "https://registry.yarnpkg.com/karma-jasmine-html-reporter/-/karma-jasmine-html-reporter-1.5.2.tgz#a846b703dbe5c8d803481e68636eb93346dc5966"
   integrity sha512-ILBPsXqQ3eomq+oaQsM311/jxsypw5/d0LnZXj26XkfThwq7jZ55A2CFSKJVA5VekbbOGvMyv7d3juZj0SeTxA==
 
-karma-jasmine@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/karma-jasmine/-/karma-jasmine-3.1.0.tgz#e234e2a50bcf4d040c79b8b1826465f783590245"
-  integrity sha512-IVGbC8gap5x5NNCEOsAE77ic8rZtHDt6wmO0fFC5yT5FeB8qKnGTeud2mtKyQ41xl7vZkZ7ZxKr4wMGR6tWN+A==
+karma-jasmine@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/karma-jasmine/-/karma-jasmine-3.1.1.tgz#f592b253e7619a8d84559d7daf473a647498ade8"
+  integrity sha512-pxBmv5K7IkBRLsFSTOpgiK/HzicQT3mfFF+oHAC7nxMfYKhaYFgxOa5qjnHW4sL5rUnmdkSajoudOnnOdPyW4Q==
   dependencies:
     jasmine-core "^3.5.0"
 
@@ -5093,7 +5100,7 @@ karma@4.4.1:
     tmp "0.0.33"
     useragent "2.3.0"
 
-katex@^0.11.1:
+katex@^0.11.0:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/katex/-/katex-0.11.1.tgz#df30ca40c565c9df01a466a00d53e079e84ffaa2"
   integrity sha512-5oANDICCTX0NqYIyAiFCCwjQ7ERu3DQG2JFHLbYOf+fXaMoH8eg/zOq5WSYJsKMi/QebW+Eh3gSM+oss1H/bww==
@@ -5721,20 +5728,18 @@ next-tick@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
 
-ng2-adsense@6.0.3:
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/ng2-adsense/-/ng2-adsense-6.0.3.tgz#664b33ce7af67d9fae231098693731389716a5b0"
-  integrity sha512-+QPjmrgLjNtLun7Ms7JpexGAm0wiveCumQwPElkiGRTQTLiXG5Gay5QN3mmSfYo9azfSILMpZEouO9oDI4PwhA==
-  dependencies:
-    tslib "^1.9.0"
+ng2-adsense@7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/ng2-adsense/-/ng2-adsense-7.0.0.tgz#b2ab7bab8944c442f5348944a31c70992eb60705"
+  integrity sha512-x1PBPa9Ovq/sUpAVOlPf2LGX+/pUoa8kVYdTM2Eae5Pv6TIk3CR5aRQhuuv+155VOq+0LrCjf5VaQQN+RV1ChA==
 
-ngx-markdown@8.2.1:
-  version "8.2.1"
-  resolved "https://registry.yarnpkg.com/ngx-markdown/-/ngx-markdown-8.2.1.tgz#53bafde382aa69ae6787abf0d72bf63bc028105a"
-  integrity sha512-59LG8rEoOwDsZyyJckp+QDnW/c5wMaRpNkb6TWktlBVTfQKyAYHr6BuSskVbZ4y8nsj54UQg0CDFLBOfUiqOwA==
+ngx-markdown@8.2.2:
+  version "8.2.2"
+  resolved "https://registry.yarnpkg.com/ngx-markdown/-/ngx-markdown-8.2.2.tgz#fecd41d17b062bae1b16e9b1173d2142fc5bc026"
+  integrity sha512-wo2M2LIiLsuLqvmpeKwk8CDiT0qkxMdyNyCeypwJRcrfkzb6qjWEycA8i9VBBXwFze+8rS2BZn1YXrdezGi/3w==
   dependencies:
-    "@types/marked" "^0.6.5"
-    katex "^0.11.1"
+    "@types/marked" "^0.7.0"
+    katex "^0.11.0"
     marked "^0.7.0"
     prismjs "^1.16.0"
     tslib "^1.9.0"
@@ -8650,10 +8655,10 @@ webdriver-manager@^12.0.6:
     semver "^5.3.0"
     xml2js "^0.4.17"
 
-webpack-cli@3.3.10:
-  version "3.3.10"
-  resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-3.3.10.tgz#17b279267e9b4fb549023fae170da8e6e766da13"
-  integrity sha512-u1dgND9+MXaEt74sJR4PR7qkPxXUSQ0RXYq8x1L6Jg1MYVEmGPrH6Ah6C4arD4r0J1P5HKjRqpab36k0eIzPqg==
+webpack-cli@3.3.11:
+  version "3.3.11"
+  resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-3.3.11.tgz#3bf21889bf597b5d82c38f215135a411edfdc631"
+  integrity sha512-dXlfuml7xvAFwYUPsrtQAA9e4DOe58gnzSxhgrO/ZM/gyXTBowrsYeubyN4mqGhYdpXMFNyQ6emjJS9M7OBd4g==
   dependencies:
     chalk "2.4.2"
     cross-spawn "6.0.5"
