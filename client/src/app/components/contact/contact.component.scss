@@ -1,91 +1,71 @@
-@import '../../../assets/styles/mixins';
-
-.contact-body {
-  width: 70%;
-
-  @include respond-to(smartphone) {
-    width: 85%;
-  }
-
-  margin-top: 10%;
-  margin-left: 5%;
+.contact {
+  padding: 50px 0 150px;
+  width: 80%;
+  margin: auto;
 }
 
-h2 {
-  border-bottom: 1px solid black;
+.contact-form {
+  width: 60%;
+  margin: 50px auto 0;
 }
 
-.detail {
-  width: 90%;
-  margin-top: 5%;
-}
-
-.contact-part-first {
-  margin-top: 5%;
-
-  @include respond-to(smartphone) {
-    margin-top: 15%;
-  }
-}
-
-.contact-part {
-  margin-top: 3%;
-
-  @include respond-to(smartphone) {
-    margin-top: 10%;
-  }
-
-  textarea {
-    border: 1px solid #ccc;
-  }
-}
-
-.contact-main {
-  margin-left: 5%;
-}
-
-.contact-button {
+.contact-form input[type='text'],
+.contact-form input[type='email'],
+.contact-form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.05);
   color: #fff;
-  border-color: #1a3d66;
-  background-color: #214d7f;
-  border-radius: 4px;
-  font-weight: 700;
-  width: 10rem;
-  height: 4rem;
 }
 
-.contact-button:hover {
-  background-color: #0044cc;
-  border: solid 1px #0044cc;
+.contact-form input[type='text'],
+.contact-form input[type='email'] {
+  width: 49%;
 }
 
-.disabled {
-  color: #ccc;
-  border-color: #eee;
-  background-color: #eee;
-  cursor: not-allowed;
+.contact-form input[type='text'] {
+  margin-right: 2%;
 }
 
-.form-part {
-  width: 40%;
+.contact-form textarea {
+  display: block;
+}
 
-  @include respond-to(smartphone) {
-    width: 60%;
+.contact-form input[type='text']:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5) inset;
+}
+
+.contact-form textarea {
+  height: 150px;
+}
+
+.contact-form input[type='submit'] {
+  display: block;
+  width: 200px;
+  margin: 40px auto 0;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.contact-form input[type='submit']:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 768px) {
+  .contact-form {
+    width: 100%;
   }
-}
 
-.name,
-.email,
-.content {
-  border: 1px solid #ccc;
-}
-
-.content {
-  @include respond-to(smartphone) {
-    width: 90%;
-  }
-
-  @include respond-to(tablet) {
-    width: 90%;
+  .contact {
+    padding-bottom: 80px;
   }
 }

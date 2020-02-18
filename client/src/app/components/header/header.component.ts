@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../environments/environment';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,8 +9,21 @@ import { environment } from '../../../environments/environment';
 })
 export class HeaderComponent implements OnInit {
   title = environment.title;
+  loginState: boolean;
 
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.loginState = false;
+    this.getLoginState();
+  }
+
+  getLoginState() {
+    this.authService.loginState().then(
+      (response) => {
+        this.loginState = response['login_state'];
+      },
+      (error) => {},
+    );
+  }
 }

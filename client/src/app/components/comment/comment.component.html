@@ -1,4 +1,4 @@
-<div class='comment-body'>
+<!-- <div class='comment-body'>
   <h3>コメント</h3>
   <div class='comment-list'>
     <div>
@@ -16,16 +16,10 @@
         <div class='comment-part-first'>
           <h5>お名前（必須）</h5>
           <input class='comment-name' type='text' formControlName="name">
-          <div *ngIf="formErrors['name']" class="form-errors">
-            {{ formErrors['name'].join(" ") }}
-          </div>
         </div>
         <div class='comment-part'>
           <h5>コメント内容（必須）</h5>
           <textarea cols='70' rows='10' class='content' formControlName="content"></textarea>
-          <div *ngIf="formErrors['content']" class="form-errors">
-            {{ formErrors['content'].join(" ") }}
-          </div>
         </div>
         <div class='comment-part'>
           <input type='submit' value='送信' class='comment-button fa click-util' [class.disabled]="isDisabled"
@@ -40,4 +34,29 @@
       </div>
     </ng-template>
   </div>
-</div>
+</div> -->
+
+
+<section class="comment">
+  <h2 class="heading">Comments</h2>
+  <div class='commented-div' *ngFor="let comment of comments">
+    <div class="commented-name-and-date">
+      <span class="commented-name">{{comment.name}}</span>
+      <span>{{comment.created_at | date:"yyyy/MM/dd HH:mm" : '+0000'}}</span>
+    </div>
+    <p class="commmented-content">{{comment.content}}</p>
+    <button *ngIf="loginState" (click)="deleteComment(comment.id)" class='click-util delete-btn'>削除</button>
+  </div>
+  <div *ngIf="!sendSuccess && readyCommentForm; else contactDone">
+    <form class="comment-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input type="text"  formControlName="name" required placeholder="NAME">
+      <textarea formControlName="content" required placeholder="CONTENT"></textarea>
+      <input type="submit" value="SEND" [class.disabled]="isDisabled" [disabled]="isDisabled">
+    </form>
+  </div>
+  <ng-template #contactDone>
+    <div class='contact-main'>
+      <h2>コメントを送信しました。</h2>
+    </div>
+  </ng-template>
+</section>

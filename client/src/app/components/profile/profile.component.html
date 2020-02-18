@@ -1,11 +1,12 @@
-<div class='profile-body' id='top'>
-  <h2>プロフィール</h2>
-  <ul class='profile-ul' *ngIf="blogInformationLoaded">
-    <li class='icon-li'>
-      <img class='kuzugr-icon' src={{blogInformation.profile_image}}><br>
-    </li>
-    <li>
-      <p class='profile-text'>{{blogInformation.profile_text}}</p>
-    </li>
-  </ul>
-</div>
+<section class="about" id="profile">
+  <h2 class="heading">PROFILE</h2>
+  <p class="about-text" *ngIf="blogInformationLoaded">
+    {{blogInformation.profile_text}}
+  </p>
+  <p>各種アカウントはこちら</p>
+  <p>
+    <a href="https://twitter.com/kuzugr">Twitter</a>
+    <a href="https://qiita.com/kuzugr">Qiita</a>
+    <a href="https://github.com/kuzugr">Github</a>
+  </p>
+</section>

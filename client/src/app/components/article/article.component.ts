@@ -5,7 +5,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../shared/services/auth.service';
 import { ConfirmDialogService } from '../../shared/services//confirm-dialog.service';
 import { Meta, Title } from '@angular/platform-browser';
-import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-article',
@@ -17,7 +16,6 @@ export class ArticleComponent implements OnInit {
   articleLoaded: boolean;
   loginState: boolean;
   articleId: number;
-  blogTitle = environment.title;
   isDisabled: boolean;
 
   constructor(
@@ -57,12 +55,17 @@ export class ArticleComponent implements OnInit {
   }
 
   getArticle(articleId: number) {
-    this.articleService.getArticle(articleId).subscribe((response) => {
-      this.article = response;
-      this.titleService.setTitle(this.article.title);
-      this.setMetaTag();
-      this.articleLoaded = true;
-    });
+    this.articleService.getArticle(articleId).subscribe(
+      (response) => {
+        this.article = response;
+        this.titleService.setTitle(this.article.title);
+        this.setMetaTag();
+        this.articleLoaded = true;
+      },
+      (error) => {
+        this.router.navigate(['/']);
+      },
+    );
   }
 
   getLoginState() {

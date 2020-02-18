@@ -12,7 +12,7 @@ module Api
         @articles = Article.with_comments_and_thumbnail(published_option, articl_ids)
         include_option = params[:limit] == '1' ? true : false
         render status: 200, json: @articles, each_serializer: ArticleSerializer,
-          include_comments: include_option,include_thumbnail: !include_option,
+          include_comments: include_option, include_thumbnail: !include_option,
           include_next: include_option
       end
 
@@ -131,9 +131,17 @@ module Api
         if params[:date]
           Article.with_thumbnail(published_option).by_date(params[:date])
         elsif params[:category_id]
-          Article.with_thumbnail(published_option).by_category(params[:category_id])
+          search_by_category
         else
           Article.with_thumbnail(published_option).by_keyword(params[:keyword])
+        end
+      end
+
+      def search_by_category
+        if params[:category_id] == 'all'
+          Article.order(created_at: :desc)
+        else
+          Article.with_thumbnail(published_option).by_category(params[:category_id])
         end
       end
 
