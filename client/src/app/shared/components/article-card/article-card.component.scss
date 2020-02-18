@@ -13,13 +13,13 @@
 
 .article-card-box {
   display: table-cell;
-  width: 25%;
   padding: 5px;
   background-color: transparent;
   color: #4d4d4d;
 }
 
 .article-card {
+  max-width: 25vw;
   font-size: 14px;
   line-height: 1.45em;
   position: relative;
@@ -182,5 +182,9 @@
   .article-card-box {
     width: 100%;
     margin-bottom: 10px;
+  }
+
+  .article-card {
+    max-width: 100%;
   }
 }
