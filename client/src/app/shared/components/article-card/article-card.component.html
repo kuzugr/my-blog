@@ -3,7 +3,8 @@
     <div class="article-card-box" *ngFor="let article of articleRow">
       <p class="article-title">{{article.title}}</p>
       <p class="article-element">
-        <a href="#" class="article-category">{{article.category}}</a>
+        <a [routerLink]="['/search']" [queryParams]="{ category_id: article.category_id }"
+          class="article-category">{{article.category}}</a>
         <span>{{article.created_at | date:"yyyy/MM/dd HH:mm" : '+0000'}}</span>
       </p>
       <div class="article-image-div">
