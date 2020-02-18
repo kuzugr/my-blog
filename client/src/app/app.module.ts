@@ -40,6 +40,8 @@ import { TopComponent } from './components/top/top.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { SearchComponent } from './components/search/search.component';
 import { ScrollTopButtonComponent } from './components/scroll-top-button/scroll-top-button.component';
+import { SearchResultComponent } from './components/search-result/search-result.component';
+import { ArticleCardComponent } from './shared/components/article-card/article-card.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +72,8 @@ import { ScrollTopButtonComponent } from './components/scroll-top-button/scroll-
     BlogsComponent,
     SearchComponent,
     ScrollTopButtonComponent,
+    SearchResultComponent,
+    ArticleCardComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

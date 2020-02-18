@@ -6,7 +6,7 @@
     </form>
     <div class="buttons" *ngIf="categoryLoaded">
       <ng-container *ngFor="let category of categories">
-        <a class="button" [routerLink]="['/search']" [queryParams]="{ category_id: category.id }">
+        <a class="button" [routerLink]="['/search']" [queryParams]="{ category_id: category.id }" fragment='search'>
           {{category.name}}
         </a>
       </ng-container>

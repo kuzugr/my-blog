@@ -1,19 +1,6 @@
 <section class="blogs" id='blogs'>
   <h2 class="heading">BLOGS</h2>
   <h4 class='blogs-message'>最新の記事はこちら</h4>
-  <div class="blogs-wrapper">
-    <ng-container *ngFor="let article of articles">
-      <div class="blog-box">
-        <p class="article-title">{{article.title}}</p>
-        <p class="article-element">
-          <a href="#" class="article-category">{{article.category}}</a>
-          <span>{{article.created_at | date:"yyyy/MM/dd HH:mm" : '+0000'}}</span>
-        </p>
-        <div class="article-image-div">
-          <img class="article-image" src="{{article.thumbnail_url}}" onerror="this.src='../../../assets/images/coding.jpg'" alt={{article.title}}>
-          <a [routerLink]="['/article', article.id]" class="button button-ghost">READ MORE</a>
-        </div>
-      </div>
-    </ng-container>
-  </div>
+  <app-article-card [articles]="this.articles" *ngIf="articleLoaded">
+  </app-article-card>
 </section>
