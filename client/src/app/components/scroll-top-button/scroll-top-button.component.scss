@@ -4,9 +4,13 @@
   position: fixed;
   right: 0;
   bottom: 0;
-  background: #ef3f98;
+  background-color: #f1b400;
   opacity: 0.6;
   border-radius: 50%;
+  cursor: pointer;
+}
+.page-top:hover {
+  opacity: 0.9;
 }
 
 .page-top a {

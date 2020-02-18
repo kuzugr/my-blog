@@ -12,6 +12,6 @@ export class ScrollTopButtonComponent implements OnInit {
   ngOnInit() {}
 
   scrollToTop() {
-    this.router.navigate([], { fragment: '' });
+    window.scroll(0,0);
   }
 }
