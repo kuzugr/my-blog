@@ -61,7 +61,11 @@ export class ArticleComponent implements OnInit {
       this.titleService.setTitle(this.article.title);
       this.setMetaTag();
       this.articleLoaded = true;
-    });
+    },
+      (error) => {
+        this.router.navigate(['/']);
+      },
+    );
   }
 
   getLoginState() {
