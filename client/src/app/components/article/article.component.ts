@@ -56,12 +56,13 @@ export class ArticleComponent implements OnInit {
   }
 
   getArticle(articleId: number) {
-    this.articleService.getArticle(articleId).subscribe((response) => {
-      this.article = response;
-      this.titleService.setTitle(this.article.title);
-      this.setMetaTag();
-      this.articleLoaded = true;
-    },
+    this.articleService.getArticle(articleId).subscribe(
+      (response) => {
+        this.article = response;
+        this.titleService.setTitle(this.article.title);
+        this.setMetaTag();
+        this.articleLoaded = true;
+      },
       (error) => {
         this.router.navigate(['/']);
       },

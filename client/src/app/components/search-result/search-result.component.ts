@@ -18,11 +18,7 @@ export class SearchResultComponent implements OnInit {
   searchTypeValue: string;
   searchTypeLoaded: boolean;
 
-  constructor(
-    private route: ActivatedRoute,
-    private articleService: ArticleService,
-    private categoryService: CategoryService,
-  ) { }
+  constructor(private route: ActivatedRoute, private articleService: ArticleService, private categoryService: CategoryService) {}
 
   ngOnInit() {
     this.articleLoaded = false;
@@ -77,5 +73,4 @@ export class SearchResultComponent implements OnInit {
       });
     }
   }
-
 }

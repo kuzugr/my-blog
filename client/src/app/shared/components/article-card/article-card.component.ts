@@ -12,7 +12,7 @@ export class ArticleCardComponent implements OnInit, OnChanges {
   articleLoaded: boolean;
   previousArticles: Array<Article>;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.articleLoaded = false;
@@ -26,12 +26,12 @@ export class ArticleCardComponent implements OnInit, OnChanges {
     }
   }
 
-  splitFourArticles(){
+  splitFourArticles() {
     const idx = 0;
     this.articleRows = [];
 
-    while(idx < this.articles.length){
-        this.articleRows.push(this.articles.splice(idx, idx + 4));
+    while (idx < this.articles.length) {
+      this.articleRows.push(this.articles.splice(idx, idx + 4));
     }
 
     this.previousArticles = this.articles;
