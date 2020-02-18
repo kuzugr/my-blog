@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Article } from '../../models/article';
 
 @Component({
@@ -6,16 +6,24 @@ import { Article } from '../../models/article';
   templateUrl: './article-card.component.html',
   styleUrls: ['./article-card.component.scss'],
 })
-export class ArticleCardComponent implements OnInit {
+export class ArticleCardComponent implements OnInit, OnChanges {
   @Input() articles: Array<Article>;
   articleRows: Array<Array<Article>>;
   articleLoaded: boolean;
+  previousArticles: Array<Article>;
 
   constructor() { }
 
   ngOnInit() {
     this.articleLoaded = false;
     this.splitFourArticles();
+  }
+
+  ngOnChanges() {
+    if (this.previousArticles) {
+      this.articleLoaded = false;
+      this.splitFourArticles();
+    }
   }
 
   splitFourArticles(){
@@ -26,6 +34,7 @@ export class ArticleCardComponent implements OnInit {
         this.articleRows.push(this.articles.splice(idx, idx + 4));
     }
 
+    this.previousArticles = this.articles;
     this.articleLoaded = true;
   }
 }
