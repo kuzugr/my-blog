@@ -10,6 +10,9 @@
           {{category.name}}
         </a>
       </ng-container>
+      <a class="button button-showy" [routerLink]="['/search']" [queryParams]="{ category_id: 'all' }" fragment='search-result'>
+        記事一覧
+      </a>
     </div>
   </div>
 </section>
