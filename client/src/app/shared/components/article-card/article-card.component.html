@@ -1,4 +1,4 @@
-<div class="article-card-wrapper">
+<div class="article-card-wrapper" *ngIf="articleLoaded">
   <div class="article-row" *ngFor="let articleRow of articleRows">
     <div class="article-card-box" *ngFor="let article of articleRow">
       <div class="article-card">
@@ -8,7 +8,7 @@
           <li class="article-tags">
             <ul>
               <li>
-                <a [routerLink]="['/search']" [queryParams]="{ category_id: article.category_id }">
+                <a [routerLink]="['/search']" [queryParams]="{ category_id: article.category_id }" fragment='search-result'>
                   {{article.category}}
                 </a>
               </li>
