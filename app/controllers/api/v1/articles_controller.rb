@@ -131,6 +131,8 @@ module Api
         if params[:date]
           Article.with_thumbnail(published_option).by_date(params[:date])
         elsif params[:category_id]
+          return Article.order(created_at: :desc) if params[:category_id] == 'all'
+
           Article.with_thumbnail(published_option).by_category(params[:category_id])
         else
           Article.with_thumbnail(published_option).by_keyword(params[:keyword])
