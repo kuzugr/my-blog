@@ -57,6 +57,11 @@ export class SearchResultComponent implements OnInit {
           this.searcyType = '月別アーカイブ';
           this.searchTypeValue = this.params['date'];
         }
+
+        this.searchTypeLoaded = true;
+        if (this.params['category_id'] && this.params['category_id'] === 'all') {
+          this.searchTypeLoaded = false;
+        }
         this.articleLoaded = true;
       },
       (error) => {},
@@ -68,12 +73,8 @@ export class SearchResultComponent implements OnInit {
       categories.forEach((category) => {
         if (category.id === Number(this.params['category_id'])) {
           this.searchTypeValue = category.name;
-          this.searchTypeLoaded = true;
-          return;
         }
       });
-    } else {
-      return;
     }
   }
 
