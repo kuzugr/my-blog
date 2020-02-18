@@ -5,7 +5,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../shared/services/auth.service';
 import { ConfirmDialogService } from '../../shared/services//confirm-dialog.service';
 import { Meta, Title } from '@angular/platform-browser';
-import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-article',

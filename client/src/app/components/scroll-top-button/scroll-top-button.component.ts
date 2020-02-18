@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-scroll-top-button',
@@ -7,7 +6,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./scroll-top-button.component.scss'],
 })
 export class ScrollTopButtonComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit() {}
 
