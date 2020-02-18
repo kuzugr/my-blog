@@ -10,6 +10,7 @@ import { SearchArticleComponent } from './components/article/search-article/sear
 import { ContactComponent } from './components/contact/contact.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { TopComponent } from './components/top/top.component';
+import { SearchResultComponent } from './components/search-result/search-result.component';
 
 const routes: Routes = [
   { path: '', component: TopComponent },
@@ -25,7 +26,7 @@ const routes: Routes = [
       { path: ':article_id/edit', component: CreateArticleComponent },
     ],
   },
-  { path: 'search', component: SearchArticleComponent },
+  { path: 'search', component: SearchResultComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: '**', component: TopComponent },
