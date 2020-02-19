@@ -1,5 +1,3 @@
-@import '../../../assets/styles/mixins';
-
 .article-body {
   width: 85%;
   margin: auto;
@@ -8,10 +6,6 @@
 .title {
   text-align: left;
   margin-bottom: 3%;
-
-  @include respond-to(smartphone) {
-    margin-bottom: 7%;
-  }
 }
 
 .article-element {
@@ -165,6 +159,7 @@
 @media (max-width: 768px) {
   .title {
     font-size: 2rem;
+    margin-bottom: 7%;
   }
 
   .other-articles .button {
