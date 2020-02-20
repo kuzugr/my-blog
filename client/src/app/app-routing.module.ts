@@ -23,6 +23,7 @@ const routes: Routes = [
       { path: 'create', component: CreateArticleComponent },
       { path: ':article_id', component: ArticleComponent },
       { path: ':article_id/edit', component: CreateArticleComponent },
+      { path: '**', component: TopComponent },
     ],
   },
   { path: 'search', component: SearchResultComponent },
