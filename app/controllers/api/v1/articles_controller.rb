@@ -21,7 +21,8 @@ module Api
                           .where(published: published_option)
                           .order('comments.created_at asc').find(params[:id])
         render status: 200, json: @article,
-          serializer: ArticleSerializer, include_comments: true, include_next: true
+          serializer: ArticleSerializer, include_thumbnail: true,
+          include_comments: true, include_next: true
       end
 
       def update
