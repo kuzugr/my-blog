@@ -36,7 +36,7 @@ module Api
         set_upload_files_and_thumbnail(article) if params[:article][:upload_file_uuids].present?
         article.user_id = current_user.id
         article.save!
-        render status: 201, json: { article_id: article.id }
+        render status: 201, json: { id: article.id }
       end
 
       def destroy

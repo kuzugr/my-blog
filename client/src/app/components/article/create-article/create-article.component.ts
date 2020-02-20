@@ -93,7 +93,7 @@ export class CreateArticleComponent implements OnInit {
   createArticle() {
     this.articleService.createArticle(this.article).subscribe(
       (response) => {
-        this.router.navigateByUrl(`/`);
+        this.router.navigateByUrl(`/article/${response.id}`);
       },
       (error) => {
         this.gotError = true;
