@@ -7,8 +7,17 @@
     <form class="contact-form" [formGroup]="form" (ngSubmit)="onSubmit()">
       <input type="text"  formControlName="name" required placeholder="NAME">
       <input type="email" formControlName="email" required placeholder="EMAIL">
+      <div *ngIf="formErrors['name']" class="form-errors">
+        {{ formErrors['name'].join(" ") }}
+      </div>
+      <div *ngIf="formErrors['email']" class="form-errors">
+        {{ formErrors['email'].join(" ") }}
+      </div>
       <textarea formControlName="content" required placeholder="MESSAGE"></textarea>
-      <input type="submit" value="SEND">
+      <div *ngIf="formErrors['content']" class="form-errors">
+        {{ formErrors['content'].join(" ") }}
+      </div>
+      <input type="submit" value="SEND" [class.disabled]="isDisabled" [disabled]="isDisabled">
     </form>
   </div>
   <ng-template #contactDone>

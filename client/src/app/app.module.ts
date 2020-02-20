@@ -19,22 +19,14 @@ import { LoginComponent } from './components/account/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CreateArticleComponent } from './components/article/create-article/create-article.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { LatestArticleComponent } from './components/article/latest-article/latest-article.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SafeHtmlPipe } from './shared/pipes/pipe.safehtml.pipe';
-import { SearchTextComponent } from './components/sidebar/search-text/search-text.component';
-import { SearchCategoryComponent } from './components/sidebar/search-category/search-category.component';
-import { AdvertisementComponent } from './components/sidebar/advertisement/advertisement.component';
-import { SearchArticleComponent } from './components/article/search-article/search-article.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { CommentComponent } from './components/comment/comment.component';
 
 import { ConfirmDialogService } from './shared/services/confirm-dialog.service';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
-import { MonthlyArchiveComponent } from './components/sidebar/monthly-archive/monthly-archive.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { TopComponent } from './components/top/top.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
@@ -49,24 +41,16 @@ import { ArticleCardComponent } from './shared/components/article-card/article-c
     LayoutComponent,
     HeaderComponent,
     FooterComponent,
-    SidebarComponent,
     ArticleComponent,
     CreateAccountComponent,
     EditAccountComponent,
     LoginComponent,
     CreateArticleComponent,
-    MenuComponent,
-    LatestArticleComponent,
     ProfileComponent,
     SafeHtmlPipe,
-    SearchTextComponent,
-    SearchCategoryComponent,
-    AdvertisementComponent,
-    SearchArticleComponent,
     ContactComponent,
     CommentComponent,
     ConfirmDialogComponent,
-    MonthlyArchiveComponent,
     PrivacyPolicyComponent,
     TopComponent,
     BlogsComponent,

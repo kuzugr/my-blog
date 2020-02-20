@@ -85,7 +85,7 @@ export class CreateArticleComponent implements OnInit {
     if (response.serverResponse.status === 200) {
       const responseBody = JSON.parse(response.serverResponse.response._body);
       this.uploadFileUuids.push(responseBody.uuid);
-      const markDownImage = `![image description](${responseBody.public_url} "image title")`;
+      const markDownImage = `[![image description](${responseBody.public_url} "image title")](${responseBody.public_url})`;
       this.form.controls.mark_content.setValue(`${this.form.controls.mark_content.value}\n${markDownImage}`);
     }
   }
@@ -93,7 +93,7 @@ export class CreateArticleComponent implements OnInit {
   createArticle() {
     this.articleService.createArticle(this.article).subscribe(
       (response) => {
-        this.router.navigateByUrl(`/`);
+        this.router.navigateByUrl(`/article/${response.id}`);
       },
       (error) => {
         this.gotError = true;

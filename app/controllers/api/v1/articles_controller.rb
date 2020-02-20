@@ -21,7 +21,8 @@ module Api
                           .where(published: published_option)
                           .order('comments.created_at asc').find(params[:id])
         render status: 200, json: @article,
-          serializer: ArticleSerializer, include_comments: true, include_next: true
+          serializer: ArticleSerializer, include_thumbnail: true,
+          include_comments: true, include_next: true
       end
 
       def update
@@ -36,7 +37,7 @@ module Api
         set_upload_files_and_thumbnail(article) if params[:article][:upload_file_uuids].present?
         article.user_id = current_user.id
         article.save!
-        render status: 201, json: { article_id: article.id }
+        render status: 201, json: { id: article.id }
       end
 
       def destroy
