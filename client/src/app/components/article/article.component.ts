@@ -33,25 +33,10 @@ export class ArticleComponent implements OnInit {
     this.articleLoaded = false;
     this.loginState = false;
     this.route.params.subscribe((params) => {
-      if (params['article_id']) {
-        this.articleId = params['article_id'];
-        this.getArticle(params['article_id']);
-      } else {
-        this.getLatestArticle();
-      }
+      this.articleId = params['article_id'];
+      this.getArticle(params['article_id']);
     });
     this.getLoginState();
-  }
-
-  getLatestArticle() {
-    this.articleService.getArticles({ limit: 1 }).subscribe((response) => {
-      if (response.length > 0) {
-        this.article = response[0];
-        this.titleService.setTitle(this.article.title);
-        this.setMetaTag();
-        this.articleLoaded = true;
-      }
-    });
   }
 
   getArticle(articleId: number) {
