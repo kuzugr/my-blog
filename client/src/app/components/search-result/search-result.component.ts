@@ -13,6 +13,8 @@ import { CategoryService } from '../../shared/services/category.service';
 export class SearchResultComponent implements OnInit {
   params: any;
   articles: Array<Article>;
+  nextPage: Number;
+  previousPage: Number;
   articleLoaded: boolean;
   searcyType: string;
   searchTypeValue: string;
@@ -36,7 +38,9 @@ export class SearchResultComponent implements OnInit {
   searchArticle() {
     this.articleService.searchArticle(this.params).subscribe(
       (response) => {
-        this.articles = response;
+        this.articles = response.articles;
+        this.nextPage = response.next_page;
+        this.previousPage = response.previous_page;
         if (this.params['category_id']) {
           this.searcyType = 'カテゴリ';
           this.categoryService.loadCategories().then((categories) => {

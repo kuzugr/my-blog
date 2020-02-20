@@ -11,7 +11,8 @@ module Api
         articl_ids = Article.latest_ids(published_option, limit)
         @articles = Article.with_comments_and_thumbnail(published_option, articl_ids)
         include_option = params[:limit] == '1' ? true : false
-        render status: 200, json: @articles, each_serializer: ArticleSerializer,
+
+        render status: 200, json: { articles: @articles }, each_serializer: ArticleSerializer,
           include_comments: include_option, include_thumbnail: !include_option,
           include_next: include_option
       end
@@ -54,8 +55,8 @@ module Api
         render_invalid_request && return unless search_parms_valid?
 
         @articles = searched_articles
-        render status: 200, json: @articles, each_serializer: ArticleSerializer,
-          include_thumbnail: true
+        response = ArticleListSerializer.new(@articles, include_thumbnail: true).to_json
+        render status: 200, json: response
       end
 
       def archive
@@ -130,19 +131,19 @@ module Api
 
       def searched_articles
         if params[:date]
-          Article.with_thumbnail(published_option).by_date(params[:date])
+          Article.page(params[:page] || 1).per(12).with_thumbnail(published_option).by_date(params[:date])
         elsif params[:category_id]
           search_by_category
         else
-          Article.with_thumbnail(published_option).by_keyword(params[:keyword])
+          Article.page(params[:page] || 1).per(12).with_thumbnail(published_option).by_keyword(params[:keyword])
         end
       end
 
       def search_by_category
         if params[:category_id] == 'all'
-          Article.order(created_at: :desc)
+          Article.page(params[:page] || 1).per(12).order(created_at: :desc)
         else
-          Article.with_thumbnail(published_option).by_category(params[:category_id])
+          Article.page(params[:page] || 1).per(12).with_thumbnail(published_option).by_category(params[:category_id])
         end
       end
 
