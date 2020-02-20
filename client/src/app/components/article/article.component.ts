@@ -132,17 +132,13 @@ export class ArticleComponent implements OnInit {
       .replace(/\r?\n/g, '')
       .trim();
     const description = this.article.description || articleContent;
-    this.metaService.addTag({ name: 'description', content: description });
-    this.metaService.addTag({ property: 'og:title', content: this.article.title });
-    this.metaService.addTag({ property: 'og:description', content: description });
-    this.metaService.addTag({ property: 'og:type', content: 'article' });
+    this.metaService.updateTag({ name: 'description', content: description });
+    this.metaService.updateTag({ property: 'og:title', content: this.article.title });
+    this.metaService.updateTag({ property: 'og:description', content: description });
+    this.metaService.updateTag({ property: 'og:type', content: 'article' });
     const url = this.articleId ? `https://kuzugr.com/article/${this.articleId}` : 'https://kuzugr.com';
-    this.metaService.addTag({ property: 'og:url', content: url });
-    this.metaService.addTag({ property: 'og:image', content: this.article.thumbnail_url });
-    this.metaService.addTag({ property: 'fb:app_id', content: '343030139677133' });
-    this.metaService.addTag({ property: 'twitter:card', content: 'summary_large_image' });
-    this.metaService.addTag({ property: 'twitter:site', content: '@kuzugr' });
-    this.metaService.addTag({ property: 'twitter:creator', content: '@kuzugr' });
+    this.metaService.updateTag({ property: 'og:url', content: url });
+    this.metaService.updateTag({ property: 'og:image', content: this.article.thumbnail_url });
   }
   // tslint:disable-next-line:max-file-line-count
 }
