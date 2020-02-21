@@ -21,7 +21,7 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
         get '/api/v1/articles'
       end
       it '空が返る' do
-        expect(JSON.parse(response.body)).to eq []
+        expect(JSON.parse(response.body)['articles']).to eq []
       end
     end
 
@@ -33,7 +33,7 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
           get '/api/v1/articles'
         end
         it '正しく記事が取得できる' do
-          article_response = JSON.parse(response.body)[0]
+          article_response = JSON.parse(response.body)['articles'][0]
           expect(article_response['id']).to eq article.id
           expect(article_response['thumbnail_url']).to eq "https://kuzugr-blog-development.s3.ap-northeast-1.amazonaws.com/images/#{article.thumbnail.uuid}"
           expect(article_response['category']).to eq category.name
@@ -50,7 +50,7 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
           get '/api/v1/articles'
         end
         it '正しく記事が取得できる' do
-          article_response = JSON.parse(response.body)[0]
+          article_response = JSON.parse(response.body)['articles'][0]
           expect(article_response['id']).to eq article.id
           expect(article_response['thumbnail_url']).to eq blog_informations.profile_image
           expect(article_response['category']).to be_nil
@@ -64,7 +64,7 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
           get '/api/v1/articles', params: { limit: 1 }
         end
         it 'コメントも返る' do
-          article_response = JSON.parse(response.body)[0]
+          article_response = JSON.parse(response.body)['articles'][0]
           expect(article_response['id']).to eq article.id
           expect(article_response['comments'][0]['name']).to eq comment.name
           expect(article_response['comments'][0]['content']).to eq comment.content
@@ -77,7 +77,7 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
           get '/api/v1/articles', params: { limit: 1 }
         end
         it '公開されていない記事を含む' do
-          article_response = JSON.parse(response.body)[0]
+          article_response = JSON.parse(response.body)['articles'][0]
           expect(article_response['id']).to eq not_published_article.id
         end
       end
