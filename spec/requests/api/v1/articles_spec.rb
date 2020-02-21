@@ -270,7 +270,7 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
       end
       it '検索に成功する' do
         expect(response.code).to eq '200'
-        search_response = JSON.parse(response.body)
+        search_response = JSON.parse(response.body)['articles']
         expect(search_response[0]['id']).to eq article.id
       end
     end
@@ -282,7 +282,7 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
       end
       it '検索に成功する' do
         expect(response.code).to eq '200'
-        search_response = JSON.parse(response.body)
+        search_response = JSON.parse(response.body)['articles']
         expect(search_response[0]['id']).to eq article.id
       end
     end
@@ -296,7 +296,7 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
       end
       it '検索に成功する' do
         expect(response.code).to eq '200'
-        search_response = JSON.parse(response.body)
+        search_response = JSON.parse(response.body)['articles']
         expect(search_response[0]['id']).to eq article.id
       end
     end
@@ -309,7 +309,7 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
       end
       it '未公開の記事も取得できる' do
         expect(response.code).to eq '200'
-        search_response = JSON.parse(response.body)
+        search_response = JSON.parse(response.body)['articles']
         expect(search_response[0]['id']).to eq not_published_article.id
       end
     end
@@ -331,7 +331,7 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
       end
       it '空が返る' do
         expect(response.code).to eq '200'
-        expect(JSON.parse(response.body)).to eq []
+        expect(JSON.parse(response.body)['articles']).to eq []
       end
     end
   end
