@@ -26,10 +26,10 @@ export class SearchResultComponent implements OnInit {
   ngOnInit() {
     this.articleLoaded = false;
     this.searchTypeLoaded = false;
-    this.getParams();
+    this.getParamsAndSearch();
   }
 
-  getParams() {
+  getParamsAndSearch() {
     this.route.queryParams.subscribe((params) => {
       this.params = params;
       this.searchArticle();
