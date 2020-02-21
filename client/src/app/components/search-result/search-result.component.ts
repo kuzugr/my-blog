@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleService } from '../../shared/services/article.service';
 import { Article } from '../../shared/models/article';
 import { Category } from '../../shared/models/category';
 import { CategoryService } from '../../shared/services/category.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-result',
@@ -85,7 +84,6 @@ export class SearchResultComponent implements OnInit {
   }
 
   pagination(page: Number) {
-    console.log(page);
     if (this.params['category_id']) {
       const routerOption = { queryParams: { category_id: this.params['category_id'], page: page }, fragment: 'search-result' };
       this.router.navigate(['/search'], routerOption);
