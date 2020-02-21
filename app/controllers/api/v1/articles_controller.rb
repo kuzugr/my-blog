@@ -54,8 +54,15 @@ module Api
       def search
         render_invalid_request && return unless search_parms_valid?
 
-        @articles = searched_articles.page(params[:page] || 1).per(12)
-        response = ArticleListSerializer.new(@articles, include_thumbnail: true).to_json
+        articles = searched_articles.page(params[:page] || 1).per(12)
+        response_articles = articles.map do |article|
+          ArticleSerializer.new(article, { include_thumbnail: true })
+        end
+        response = {
+          articles: response_articles,
+          next_page: articles.next_page,
+          previous_page: articles.prev_page,
+        }
         render status: 200, json: response
       end
 
