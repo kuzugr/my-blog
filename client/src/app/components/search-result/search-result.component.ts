@@ -4,6 +4,7 @@ import { ArticleService } from '../../shared/services/article.service';
 import { Article } from '../../shared/models/article';
 import { Category } from '../../shared/models/category';
 import { CategoryService } from '../../shared/services/category.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-result',
@@ -20,7 +21,7 @@ export class SearchResultComponent implements OnInit {
   searchTypeValue: string;
   searchTypeLoaded: boolean;
 
-  constructor(private route: ActivatedRoute, private articleService: ArticleService, private categoryService: CategoryService) {}
+  constructor(private route: ActivatedRoute, private articleService: ArticleService, private categoryService: CategoryService, private router: Router) {}
 
   ngOnInit() {
     this.articleLoaded = false;
@@ -75,6 +76,17 @@ export class SearchResultComponent implements OnInit {
           this.searchTypeValue = category.name;
         }
       });
+    }
+  }
+
+  pagination(page: Number) {
+    console.log(page);
+    if (this.params['category_id']) {
+      const routerOption = { queryParams: { category_id: this.params['category_id'], page: page }, fragment: 'search-result' }
+      this.router.navigate(['/search'], routerOption);
+    } else {
+      const routerOption = { queryParams: { keyword: this.params['keyword'], page: page }, fragment: 'search-result' }
+      this.router.navigate(['/search'], routerOption);
     }
   }
 }

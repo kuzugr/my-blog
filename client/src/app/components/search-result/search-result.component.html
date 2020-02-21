@@ -4,4 +4,12 @@
   <p *ngIf="searchTypeLoaded">{{searcyType}}：{{searchTypeValue}}</p>
   <app-article-card [articles]="this.articles" *ngIf="articleLoaded">
   </app-article-card>
+  <div class="pagination clearfix">
+    <a *ngIf="previousPage" (click)="pagination(previousPage)" class="prev-button button">
+      <span>前のページ</span>
+    </a>
+    <a *ngIf="nextPage" (click)="pagination(nextPage)" class="next-button button">
+      <span>次のページ</span>
+    </a>
+  </div>
 </section>
