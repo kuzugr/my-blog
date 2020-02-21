@@ -54,7 +54,7 @@ module Api
       def search
         render_invalid_request && return unless search_parms_valid?
 
-        @articles = searched_articles
+        @articles = searched_articles.page(params[:page] || 1).per(12)
         response = ArticleListSerializer.new(@articles, include_thumbnail: true).to_json
         render status: 200, json: response
       end
@@ -131,19 +131,19 @@ module Api
 
       def searched_articles
         if params[:date]
-          Article.page(params[:page] || 1).per(12).with_thumbnail(published_option).by_date(params[:date])
+          Article.with_thumbnail(published_option).by_date(params[:date])
         elsif params[:category_id]
           search_by_category
         else
-          Article.page(params[:page] || 1).per(12).with_thumbnail(published_option).by_keyword(params[:keyword])
+          Article.with_thumbnail(published_option).by_keyword(params[:keyword])
         end
       end
 
       def search_by_category
         if params[:category_id] == 'all'
-          Article.page(params[:page] || 1).per(12).order(created_at: :desc)
+          Article.order(created_at: :desc)
         else
-          Article.page(params[:page] || 1).per(12).with_thumbnail(published_option).by_category(params[:category_id])
+          Article.with_thumbnail(published_option).by_category(params[:category_id])
         end
       end
 

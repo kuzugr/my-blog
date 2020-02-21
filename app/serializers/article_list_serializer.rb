@@ -7,7 +7,7 @@ class ArticleListSerializer < ActiveModel::Serializer
 
   def articles
     object.each do |article|
-      ArticleSerializer.new(object, scope[:include_thumbnail])
+      ArticleSerializer.new(object, { include_thumbnail: instance_options[:include_thumbnail] })
     end
   end
 
