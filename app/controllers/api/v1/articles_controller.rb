@@ -9,12 +9,18 @@ module Api
       def index
         limit = params[:limit] || 5
         articl_ids = Article.latest_ids(published_option, limit)
-        @articles = Article.with_comments_and_thumbnail(published_option, articl_ids)
+        articles = Article.with_comments_and_thumbnail(published_option, articl_ids)
         include_option = params[:limit] == '1' ? true : false
 
-        render status: 200, json: { articles: @articles }, each_serializer: ArticleSerializer,
-          include_comments: include_option, include_thumbnail: !include_option,
+        serializer_options = {
+          include_comments: include_option,
+          include_thumbnail: !include_option,
           include_next: include_option
+        }
+        response_articles = articles.map do |article|
+          ArticleSerializer.new(article, serializer_options)
+        end
+        render status: 200, json: { articles: response_articles }
       end
 
       def show
