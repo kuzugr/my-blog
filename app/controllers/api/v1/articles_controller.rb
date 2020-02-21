@@ -15,7 +15,7 @@ module Api
         serializer_options = {
           include_comments: include_option,
           include_thumbnail: !include_option,
-          include_next: include_option
+          include_next: include_option,
         }
         response_articles = articles.map do |article|
           ArticleSerializer.new(article, serializer_options)
