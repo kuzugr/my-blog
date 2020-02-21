@@ -21,7 +21,12 @@ export class SearchResultComponent implements OnInit {
   searchTypeValue: string;
   searchTypeLoaded: boolean;
 
-  constructor(private route: ActivatedRoute, private articleService: ArticleService, private categoryService: CategoryService, private router: Router) {}
+  constructor(
+    private route: ActivatedRoute,
+    private articleService: ArticleService,
+    private categoryService: CategoryService,
+    private router: Router,
+  ) {}
 
   ngOnInit() {
     this.articleLoaded = false;
@@ -82,10 +87,10 @@ export class SearchResultComponent implements OnInit {
   pagination(page: Number) {
     console.log(page);
     if (this.params['category_id']) {
-      const routerOption = { queryParams: { category_id: this.params['category_id'], page: page }, fragment: 'search-result' }
+      const routerOption = { queryParams: { category_id: this.params['category_id'], page: page }, fragment: 'search-result' };
       this.router.navigate(['/search'], routerOption);
     } else {
-      const routerOption = { queryParams: { keyword: this.params['keyword'], page: page }, fragment: 'search-result' }
+      const routerOption = { queryParams: { keyword: this.params['keyword'], page: page }, fragment: 'search-result' };
       this.router.navigate(['/search'], routerOption);
     }
   }
