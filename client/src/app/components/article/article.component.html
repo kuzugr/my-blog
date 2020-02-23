@@ -3,15 +3,15 @@
     <h2 class='title'>{{article.title}}</h2>
     <div>
       <div *ngIf="loginState" class='button-list'>
-        <button class='click-util edit-btn' routerLink="/article/{{article.id}}/edit">編集</button>
-        <button class='click-util publish-btn' (click)="changePublishStatus(article.id)">
+        <button class='button button-showy' routerLink="/article/{{article.id}}/edit">編集</button>
+        <button class='button button-danger' (click)="changePublishStatus(article.id)">
           {{article.published ? '非公開にする' : '公開する' }}
         </button>
-        <button class='click-util tweet-btn' (click)="tweetArticle()" [class.disabled]="isDisabled"
+        <button class='button button-showy' (click)="tweetArticle()" [class.disabled]="isDisabled"
           [disabled]="isDisabled">
           Tweet
         </button>
-        <button class='click-util destroy-btn' (click)="destoryArticle()">
+        <button class='button button-danger' (click)="destoryArticle()">
           削除する
         </button>
       </div>
