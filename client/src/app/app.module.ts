@@ -66,7 +66,6 @@ import { FileUploaderComponent } from './shared/components/file-uploader/file-up
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ImageUploadModule.forRoot(),
     AngularMarkdownEditorModule.forRoot(),
     MarkdownModule.forRoot(),
     AdsenseModule.forRoot({

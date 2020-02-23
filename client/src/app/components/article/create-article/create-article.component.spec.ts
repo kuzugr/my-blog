@@ -18,7 +18,6 @@ xdescribe('CreateArticleComponent', () => {
       imports: [
         ReactiveFormsModule,
         AngularMarkdownEditorModule.forRoot(),
-        ImageUploadModule.forRoot(),
         HttpClientModule,
         RouterTestingModule,
         MarkdownModule,
