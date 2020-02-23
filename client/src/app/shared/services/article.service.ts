@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Article } from '../models/article';
+import { ArticleList } from '../models/article-list';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
@@ -13,8 +14,8 @@ export class ArticleService {
 
   constructor(private http: HttpClient) {}
 
-  getArticles(params = {}): Observable<Array<Article>> {
-    return this.http.get<Array<Article>>(`${this.apiEndpoint}/articles`, { params: params });
+  getArticles(params = {}): Observable<ArticleList> {
+    return this.http.get<ArticleList>(`${this.apiEndpoint}/articles`, { params: params });
   }
 
   getArticle(articleId: number): Observable<Article> {
@@ -29,8 +30,8 @@ export class ArticleService {
     return this.http.patch<Article>(`${this.apiEndpoint}/articles/${articleId}`, { article: article });
   }
 
-  searchArticle(params = {}): Observable<Array<Article>> {
-    return this.http.get<Array<Article>>(`${this.apiEndpoint}/articles/search`, { params: params });
+  searchArticle(params = {}): Observable<ArticleList> {
+    return this.http.get<ArticleList>(`${this.apiEndpoint}/articles/search`, { params: params });
   }
 
   changePublishStatus(articleId: number): Observable<Article> {

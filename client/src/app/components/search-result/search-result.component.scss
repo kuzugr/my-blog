@@ -1,3 +1,20 @@
 .search-result {
   margin-bottom: 150px;
 }
+
+.pagination {
+  width: 90%;
+  margin-top: 60px;
+}
+
+.pagination a {
+  display: inline-block;
+}
+
+.prev-button {
+  float: left;
+}
+
+.next-button {
+  float: right;
+}

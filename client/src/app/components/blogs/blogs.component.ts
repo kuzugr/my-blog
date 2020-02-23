@@ -20,8 +20,8 @@ export class BlogsComponent implements OnInit {
 
   getLatestArticles() {
     this.articleService.getArticles({ limit: 4 }).subscribe((response) => {
-      if (response.length > 0) {
-        this.articles = response;
+      if (response.articles.length > 0) {
+        this.articles = response.articles;
         this.articleLoaded = true;
       }
     });
