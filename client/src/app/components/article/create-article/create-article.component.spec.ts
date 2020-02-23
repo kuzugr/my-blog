@@ -5,7 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
-import { ImageUploadModule } from 'angular2-image-upload';
 import { MarkdownModule, MarkdownService, MarkedOptions } from 'ngx-markdown';
 import { CreateArticleComponent } from './create-article.component';
 
