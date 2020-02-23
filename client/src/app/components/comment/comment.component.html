@@ -5,8 +5,8 @@
       <span class="commented-name">{{comment.name}}</span>
       <span>{{comment.created_at | date:"yyyy/MM/dd HH:mm" : '+0900'}}</span>
     </div>
-    <p class="commmented-content">{{comment.content}}</p>
-    <button *ngIf="loginState" (click)="deleteComment(comment.id)" class='click-util delete-btn'>削除</button>
+    <span class="commmented-content">{{comment.content}}</span>
+    <button *ngIf="loginState" (click)="deleteComment(comment.id)" class='button delete-button button-danger'>削除</button>
   </div>
   <div *ngIf="!sendSuccess && readyCommentForm; else contactDone">
     <form class="comment-form" [formGroup]="form" (ngSubmit)="onSubmit()">
@@ -16,8 +16,8 @@
     </form>
   </div>
   <ng-template #contactDone>
-    <div class='contact-main'>
-      <h2>コメントを送信しました。</h2>
+    <div class='commented-div'>
+      <h4>コメントを送信しました。</h4>
     </div>
   </ng-template>
 </section>
