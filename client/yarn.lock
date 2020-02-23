@@ -1012,17 +1012,17 @@
   resolved "https://registry.yarnpkg.com/@nguniversal/common/-/common-9.0.1.tgz#f200003ef5e98d7bf8d54d43b2d64b163d5042da"
   integrity sha512-AprW7oREmywDudrBI1auy4lB6AQFKHLeebdY7vAXjviIEzBDm9Zd1Z59SqFtp+H4Pce8R7tQ3zoXY1n7azCigg==
 
-"@nguniversal/express-engine@9.0.1":
+"@nguniversal/express-engine@^9.0.1":
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/@nguniversal/express-engine/-/express-engine-9.0.1.tgz#109078bda23093dbdfec7a722c360a4e394931fb"
   integrity sha512-uICu/CVrKuRYKUhpn91tRoERRhorDH038zyUsQt3yqsKV5BXyclr+H0lHh94dXyi+W0RKmksvzGNshwc4IWnUA==
   dependencies:
     "@nguniversal/common" "9.0.1"
 
-"@nguniversal/module-map-ngfactory-loader@8.2.6":
-  version "8.2.6"
-  resolved "https://registry.yarnpkg.com/@nguniversal/module-map-ngfactory-loader/-/module-map-ngfactory-loader-8.2.6.tgz#0edc07c4437566970392c9bca1d13b8964971cb0"
-  integrity sha512-YcxXSrDZt6iDR+YbesJvprNpHd1nRLeThJwAFlcwvK/GVGSyKeWV6eqk3bRkBkgkw8OwaG/4lOQ4aofxQw+13w==
+"@nguniversal/module-map-ngfactory-loader@^9.0.0-next.9":
+  version "9.0.0-next.9"
+  resolved "https://registry.yarnpkg.com/@nguniversal/module-map-ngfactory-loader/-/module-map-ngfactory-loader-9.0.0-next.9.tgz#d56e32dfba22d4599f43697954da683c290bb388"
+  integrity sha512-eQF9A9vb3yzQg4DuFIdpQUMEXhx6SerNPiZQIqBizTWDG0ogD0f/Wu47zs9kYUppdhuMucQazKJWLb6nHk2khw==
 
 "@schematics/angular@9.0.3":
   version "9.0.3"
