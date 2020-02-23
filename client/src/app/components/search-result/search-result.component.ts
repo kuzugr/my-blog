@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleService } from '../../shared/services/article.service';
 import { Article } from '../../shared/models/article';
 import { Category } from '../../shared/models/category';
@@ -13,20 +13,27 @@ import { CategoryService } from '../../shared/services/category.service';
 export class SearchResultComponent implements OnInit {
   params: any;
   articles: Array<Article>;
+  nextPage: Number;
+  previousPage: Number;
   articleLoaded: boolean;
   searcyType: string;
   searchTypeValue: string;
   searchTypeLoaded: boolean;
 
-  constructor(private route: ActivatedRoute, private articleService: ArticleService, private categoryService: CategoryService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private articleService: ArticleService,
+    private categoryService: CategoryService,
+    private router: Router,
+  ) {}
 
   ngOnInit() {
     this.articleLoaded = false;
     this.searchTypeLoaded = false;
-    this.getParams();
+    this.getParamsAndSearch();
   }
 
-  getParams() {
+  getParamsAndSearch() {
     this.route.queryParams.subscribe((params) => {
       this.params = params;
       this.searchArticle();
@@ -36,7 +43,9 @@ export class SearchResultComponent implements OnInit {
   searchArticle() {
     this.articleService.searchArticle(this.params).subscribe(
       (response) => {
-        this.articles = response;
+        this.articles = response.articles;
+        this.nextPage = response.next_page;
+        this.previousPage = response.previous_page;
         if (this.params['category_id']) {
           this.searcyType = 'カテゴリ';
           this.categoryService.loadCategories().then((categories) => {
@@ -71,6 +80,16 @@ export class SearchResultComponent implements OnInit {
           this.searchTypeValue = category.name;
         }
       });
+    }
+  }
+
+  pagination(page: Number) {
+    if (this.params['category_id']) {
+      const routerOption = { queryParams: { category_id: this.params['category_id'], page: page }, fragment: 'search-result' };
+      this.router.navigate(['/search'], routerOption);
+    } else {
+      const routerOption = { queryParams: { keyword: this.params['keyword'], page: page }, fragment: 'search-result' };
+      this.router.navigate(['/search'], routerOption);
     }
   }
 }
