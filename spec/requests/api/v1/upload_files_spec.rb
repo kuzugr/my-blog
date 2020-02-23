@@ -6,6 +6,7 @@ RSpec.describe Api::V1::UploadFilesController, type: :request do
   describe 'POST /api/v1/upload_files' do
     context 'parameterが正しい場合' do
       before do
+        allow_any_instance_of(ApplicationController).to receive(:authenticate_user_from_token!).and_return(true)
         uplaod_image =  fixture_file_upload(image, "image/jpeg")
         post '/api/v1/upload_files', params: { image: uplaod_image }
       end
@@ -18,11 +19,22 @@ RSpec.describe Api::V1::UploadFilesController, type: :request do
 
     context '不正なparameterの場合' do
       before do
+        allow_any_instance_of(ApplicationController).to receive(:authenticate_user_from_token!).and_return(true)
         uplaod_image =  fixture_file_upload(image, "image/jpeg")
         post '/api/v1/upload_files'
       end
       it '500エラーが返る' do
         expect(response.code).to eq '500'
+      end
+    end
+
+    context '未認証の場合' do
+      before do
+        uplaod_image =  fixture_file_upload(image, "image/jpeg")
+        post '/api/v1/upload_files'
+      end
+      it '401エラーが返る' do
+        expect(response.code).to eq '401'
       end
     end
   end

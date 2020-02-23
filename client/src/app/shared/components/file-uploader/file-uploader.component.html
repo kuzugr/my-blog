@@ -1,0 +1,10 @@
+<div class="file-uploader">
+  <label class="button">
+    SELECT IMAGE
+    <input type="file" (change)="onFileChange($event.target.files)" [disabled]="disabled">
+  </label>
+  <div class="uploaded-images" *ngIf="uploadedFiles.length > 0">
+    <img class="uploaded-image" *ngFor="let uploadedFile of uploadedFiles" [src]="uploadedFile">
+    <p>{{ uploadedFile }}</p>
+  </div>
+</div>

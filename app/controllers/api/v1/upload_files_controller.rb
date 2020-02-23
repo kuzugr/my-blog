@@ -3,7 +3,6 @@
 module Api
   module V1
     class UploadFilesController < ApplicationController
-      skip_before_action :authenticate_user_from_token!, only: [:create]
       def create
         image = params[:image]
         uuid = UploadFile.generate_uuid

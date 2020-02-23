@@ -5,7 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
-import { ImageUploadModule } from 'angular2-image-upload';
 import { MarkdownModule, MarkdownService, MarkedOptions } from 'ngx-markdown';
 import { CreateArticleComponent } from './create-article.component';
 
@@ -16,14 +15,7 @@ xdescribe('CreateArticleComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [CreateArticleComponent],
-      imports: [
-        ReactiveFormsModule,
-        AngularMarkdownEditorModule.forRoot(),
-        ImageUploadModule.forRoot(),
-        HttpClientModule,
-        RouterTestingModule,
-        MarkdownModule,
-      ],
+      imports: [ReactiveFormsModule, AngularMarkdownEditorModule.forRoot(), HttpClientModule, RouterTestingModule, MarkdownModule],
       providers: [MarkdownService, MarkedOptions],
     }).compileComponents();
   }));
