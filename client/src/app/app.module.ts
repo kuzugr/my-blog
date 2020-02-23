@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
 import { MarkdownModule } from 'ngx-markdown';
 import { AdsenseModule } from 'ng2-adsense';
@@ -66,6 +67,7 @@ import { FileUploaderComponent } from './shared/components/file-uploader/file-up
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    HttpModule,
     AngularMarkdownEditorModule.forRoot(),
     MarkdownModule.forRoot(),
     AdsenseModule.forRoot({
