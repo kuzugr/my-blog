@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { Article } from '../models/article';
 import { ArticleList } from '../models/article-list';
 import { environment } from '../../../environments/environment';
+import { Http } from '@angular/http';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,7 @@ export class ArticleService {
   apiEndpoint = environment.apiEndpoint;
   latestArticles: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private oldHttp: Http) {}
 
   getArticles(params = {}): Observable<ArticleList> {
     return this.http.get<ArticleList>(`${this.apiEndpoint}/articles`, { params: params });
@@ -48,6 +49,12 @@ export class ArticleService {
 
   destroy(articleId: number): Observable<any> {
     return this.http.delete<any>(`${this.apiEndpoint}/articles/${articleId}`);
+  }
+
+  uploadFile(file: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('image', file, file.name);
+    return this.oldHttp.post(`${this.apiEndpoint}/upload_files`, formData, { withCredentials: true });
   }
 
   async loadLatestArticles() {
