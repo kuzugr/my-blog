@@ -15,13 +15,7 @@ xdescribe('CreateArticleComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [CreateArticleComponent],
-      imports: [
-        ReactiveFormsModule,
-        AngularMarkdownEditorModule.forRoot(),
-        HttpClientModule,
-        RouterTestingModule,
-        MarkdownModule,
-      ],
+      imports: [ReactiveFormsModule, AngularMarkdownEditorModule.forRoot(), HttpClientModule, RouterTestingModule, MarkdownModule],
       providers: [MarkdownService, MarkedOptions],
     }).compileComponents();
   }));
