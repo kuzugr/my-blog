@@ -3,10 +3,9 @@ import { ArticleService } from '../../services/article.service';
 
 export class FileHolder {
   public pending = false;
-  public serverResponse: { status: number, response: any };
+  public serverResponse: { status: number; response: any };
 
-  constructor(public src: string, public file: File) {
-  }
+  constructor(public src: string, public file: File) {}
 }
 
 @Component({
@@ -21,7 +20,7 @@ export class FileUploaderComponent implements OnInit {
   url: String;
   uploadedFiles: Array<String>;
 
-  constructor(private articleService: ArticleService) { }
+  constructor(private articleService: ArticleService) {}
 
   ngOnInit() {
     this.disabled = false;
@@ -39,10 +38,14 @@ export class FileUploaderComponent implements OnInit {
     img.src = window.URL.createObjectURL(file);
 
     const reader = new FileReader();
-    reader.addEventListener('load', (event: any) => {
-      const fileHolder: FileHolder = new FileHolder(event.target.result, file);
-      this.uploadSingleFile(fileHolder);
-    }, false);
+    reader.addEventListener(
+      'load',
+      (event: any) => {
+        const fileHolder: FileHolder = new FileHolder(event.target.result, file);
+        this.uploadSingleFile(fileHolder);
+      },
+      false,
+    );
     reader.readAsDataURL(file);
   }
 
@@ -50,14 +53,13 @@ export class FileUploaderComponent implements OnInit {
     fileHolder.pending = true;
 
     this.articleService.uploadFile(fileHolder.file).subscribe(
-      response => {
+      (response) => {
         this.uploadedFiles.push(JSON.parse(response._body).public_url);
         fileHolder.serverResponse = { status: response.status, response };
         fileHolder.pending = false;
         this.uploadFinished.emit(fileHolder);
       },
-      error => {},
-    )
+      (error) => {},
+    );
   }
-
 }
