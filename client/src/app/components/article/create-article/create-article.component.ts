@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ValidateForm } from '../../../shared/functions/validate-forms';
 import { ArticleService } from '../../../shared/services//article.service';
@@ -9,13 +9,14 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { MarkdownService } from 'ngx-markdown';
 import { environment } from '../../../../environments/environment';
 import { AuthService } from '../../../shared/services/auth.service';
+import { OnBeforeunload } from 'app/shared/guards/beforeunload.guard';
 
 @Component({
   selector: 'app-create-article',
   templateUrl: './create-article.component.html',
   styleUrls: ['./create-article.component.scss'],
 })
-export class CreateArticleComponent implements OnInit {
+export class CreateArticleComponent implements OnInit, OnBeforeunload {
   form: FormGroup;
   article: Article;
   articleLoaded: boolean;
@@ -41,6 +42,7 @@ export class CreateArticleComponent implements OnInit {
       required: 'カテゴリを選択してください。',
     },
   };
+  submitted = false;
 
   constructor(
     private articleService: ArticleService,
@@ -93,6 +95,7 @@ export class CreateArticleComponent implements OnInit {
   createArticle() {
     this.articleService.createArticle(this.article).subscribe(
       (response) => {
+        this.submitted = true;
         this.router.navigateByUrl(`/article/${response.id}`);
       },
       (error) => {
@@ -104,6 +107,7 @@ export class CreateArticleComponent implements OnInit {
   editArticle() {
     this.articleService.editArticle(this.article, this.articleId).subscribe(
       (response) => {
+        this.submitted = true;
         this.router.navigateByUrl(`/article/${this.articleId}`);
       },
       (error) => {
@@ -159,6 +163,17 @@ export class CreateArticleComponent implements OnInit {
       },
       (error) => {},
     );
+  }
+
+  shouldConfirmOnBeforeunload() {
+    return !this.submitted;
+  }
+
+  @HostListener('window:beforeunload', ['$event'])
+  beforeUnload(e: Event) {
+    if (this.shouldConfirmOnBeforeunload()) {
+      e.returnValue = true;
+    }
   }
   // tslint:disable-next-line:max-file-line-count
 }
