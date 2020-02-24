@@ -95,7 +95,7 @@ export class CreateArticleComponent implements OnInit, OnBeforeunload {
   createArticle() {
     this.articleService.createArticle(this.article).subscribe(
       (response) => {
-        this.submitted = true
+        this.submitted = true;
         this.router.navigateByUrl(`/article/${response.id}`);
       },
       (error) => {
@@ -107,7 +107,7 @@ export class CreateArticleComponent implements OnInit, OnBeforeunload {
   editArticle() {
     this.articleService.editArticle(this.article, this.articleId).subscribe(
       (response) => {
-        this.submitted = true
+        this.submitted = true;
         this.router.navigateByUrl(`/article/${this.articleId}`);
       },
       (error) => {

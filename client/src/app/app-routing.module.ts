@@ -21,7 +21,7 @@ const routes: Routes = [
   {
     path: 'article',
     children: [
-      { path: 'create', component: CreateArticleComponent, canDeactivate: [BeforeunloadGuard]  },
+      { path: 'create', component: CreateArticleComponent, canDeactivate: [BeforeunloadGuard] },
       { path: ':article_id', component: ArticleComponent },
       { path: ':article_id/edit', component: CreateArticleComponent },
       { path: '**', component: TopComponent },
