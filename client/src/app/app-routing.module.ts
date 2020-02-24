@@ -10,6 +10,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { TopComponent } from './components/top/top.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
+import { BeforeunloadGuard } from './shared/guards/beforeunload.guard';
 
 const routes: Routes = [
   { path: '', component: TopComponent },
@@ -20,7 +21,7 @@ const routes: Routes = [
   {
     path: 'article',
     children: [
-      { path: 'create', component: CreateArticleComponent },
+      { path: 'create', component: CreateArticleComponent, canDeactivate: [BeforeunloadGuard]  },
       { path: ':article_id', component: ArticleComponent },
       { path: ':article_id/edit', component: CreateArticleComponent },
       { path: '**', component: TopComponent },
@@ -33,6 +34,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  providers: [BeforeunloadGuard],
   imports: [
     RouterModule.forRoot(routes, {
       scrollPositionRestoration: 'enabled',
