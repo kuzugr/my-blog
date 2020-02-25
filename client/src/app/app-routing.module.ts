@@ -23,7 +23,7 @@ const routes: Routes = [
     children: [
       { path: 'create', component: CreateArticleComponent, canDeactivate: [BeforeunloadGuard] },
       { path: ':article_id', component: ArticleComponent },
-      { path: ':article_id/edit', component: CreateArticleComponent },
+      { path: ':article_id/edit', component: CreateArticleComponent, canDeactivate: [BeforeunloadGuard] },
       { path: '**', component: TopComponent },
     ],
   },
