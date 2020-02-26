@@ -4,7 +4,7 @@
       <div class="article-card">
         <div class="article-image" [ngStyle]="{'background': 'url(' + article.thumbnail_url + ') center no-repeat'}"></div>
         <ul class="article-details">
-          <li class="article-date">{{article.created_at | date:"yyyy/MM/dd HH:mm" : '+0900'}}</li>
+          <li class="article-date"><time [dateTime]="article.created_at">{{article.created_at | date:"yyyy/MM/dd HH:mm" : '+0900'}}</time></li>
           <li class="article-tags">
             <ul>
               <li>
