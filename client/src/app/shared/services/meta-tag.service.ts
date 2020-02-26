@@ -6,8 +6,7 @@ import { Meta, Title } from '@angular/platform-browser';
   providedIn: 'root',
 })
 export class MetaTagService {
-
-  constructor(private metaService: Meta, private titleService: Title) { }
+  constructor(private metaService: Meta, private titleService: Title) {}
 
   setMetaTag(article?: Article) {
     if (!!article) {
