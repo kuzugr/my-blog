@@ -18,7 +18,6 @@ import { EditAccountComponent } from './components/account/edit-account/edit-acc
 import { LoginComponent } from './components/account/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { CreateArticleComponent } from './components/article/create-article/create-article.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SafeHtmlPipe } from './shared/pipes/pipe.safehtml.pipe';
@@ -35,15 +34,12 @@ import { ScrollTopButtonComponent } from './components/scroll-top-button/scroll-
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { ArticleCardComponent } from './shared/components/article-card/article-card.component';
 import { FileUploaderComponent } from './shared/components/file-uploader/file-uploader.component';
-import { HeaderAdsenseComponent } from './components/adsense/header-adsense/header-adsense.component';
-import { FooterAdsenseComponent } from './components/adsense/footer-adsense/footer-adsense.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     HeaderComponent,
-    FooterComponent,
     ArticleComponent,
     CreateAccountComponent,
     EditAccountComponent,
@@ -62,8 +58,6 @@ import { FooterAdsenseComponent } from './components/adsense/footer-adsense/foot
     SearchResultComponent,
     ArticleCardComponent,
     FileUploaderComponent,
-    HeaderAdsenseComponent,
-    FooterAdsenseComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
