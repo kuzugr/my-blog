@@ -35,7 +35,8 @@ import { ScrollTopButtonComponent } from './components/scroll-top-button/scroll-
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { ArticleCardComponent } from './shared/components/article-card/article-card.component';
 import { FileUploaderComponent } from './shared/components/file-uploader/file-uploader.component';
-import { AdsenseComponent } from './components/adsense/adsense.component';
+import { HeaderAdsenseComponent } from './components/adsense/header-adsense/header-adsense.component';
+import { FooterAdsenseComponent } from './components/adsense/footer-adsense/footer-adsense.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { AdsenseComponent } from './components/adsense/adsense.component';
     SearchResultComponent,
     ArticleCardComponent,
     FileUploaderComponent,
-    AdsenseComponent,
+    HeaderAdsenseComponent,
+    FooterAdsenseComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
