@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MetaTagService } from '../../shared/services/meta-tag.service';
 
 @Component({
   selector: 'app-top',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top.component.scss'],
 })
 export class TopComponent implements OnInit {
-  constructor() {}
+  constructor(private metaTagService: MetaTagService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.metaTagService.setMetaTag();
+  }
 }
