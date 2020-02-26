@@ -17,7 +17,6 @@ const routes: Routes = [
   { path: 'registration', component: CreateAccountComponent },
   { path: 'account', component: EditAccountComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'profile', component: ProfileComponent },
   {
     path: 'article',
     children: [
@@ -28,7 +27,6 @@ const routes: Routes = [
     ],
   },
   { path: 'search', component: SearchResultComponent },
-  { path: 'contact', component: ContactComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: '**', component: TopComponent },
 ];
