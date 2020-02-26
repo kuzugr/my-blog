@@ -4,7 +4,7 @@ import { Article } from '../../shared/models/article';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../shared/services/auth.service';
 import { ConfirmDialogService } from '../../shared/services//confirm-dialog.service';
-import { Meta, Title } from '@angular/platform-browser';
+import { MetaTagService } from '../../shared/services/meta-tag.service';
 
 @Component({
   selector: 'app-article',
@@ -23,9 +23,8 @@ export class ArticleComponent implements OnInit {
     private route: ActivatedRoute,
     private authService: AuthService,
     private confirmDialogService: ConfirmDialogService,
-    private metaService: Meta,
-    private titleService: Title,
     private router: Router,
+    private metaTagService: MetaTagService,
   ) {}
 
   ngOnInit() {
@@ -43,8 +42,7 @@ export class ArticleComponent implements OnInit {
     this.articleService.getArticle(articleId).subscribe(
       (response) => {
         this.article = response;
-        this.titleService.setTitle(this.article.title);
-        this.setMetaTag();
+        this.metaTagService.setMetaTag(this.article);
         this.articleLoaded = true;
       },
       (error) => {
@@ -124,21 +122,6 @@ export class ArticleComponent implements OnInit {
           );
         }
       });
-  }
-
-  setMetaTag() {
-    const articleContent = this.article.html_content
-      .replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '')
-      .replace(/\r?\n/g, '')
-      .trim();
-    const description = this.article.description || articleContent;
-    this.metaService.updateTag({ name: 'description', content: description });
-    this.metaService.updateTag({ property: 'og:title', content: this.article.title });
-    this.metaService.updateTag({ property: 'og:description', content: description });
-    this.metaService.updateTag({ property: 'og:type', content: 'article' });
-    const url = this.articleId ? `https://kuzugr.com/article/${this.articleId}` : 'https://kuzugr.com';
-    this.metaService.updateTag({ property: 'og:url', content: url });
-    this.metaService.updateTag({ property: 'og:image', content: this.article.thumbnail_url });
   }
   // tslint:disable-next-line:max-file-line-count
 }
