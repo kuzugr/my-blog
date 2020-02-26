@@ -35,6 +35,7 @@ import { ScrollTopButtonComponent } from './components/scroll-top-button/scroll-
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { ArticleCardComponent } from './shared/components/article-card/article-card.component';
 import { FileUploaderComponent } from './shared/components/file-uploader/file-uploader.component';
+import { AdsenseComponent } from './components/adsense/adsense.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { FileUploaderComponent } from './shared/components/file-uploader/file-up
     SearchResultComponent,
     ArticleCardComponent,
     FileUploaderComponent,
+    AdsenseComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
