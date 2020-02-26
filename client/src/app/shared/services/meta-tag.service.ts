@@ -5,12 +5,12 @@ import { Meta, Title } from '@angular/platform-browser';
 @Injectable({
   providedIn: 'root',
 })
-export class MeteTagService {
+export class MetaTagService {
 
   constructor(private metaService: Meta, private titleService: Title) { }
 
   setMetaTag(article?: Article) {
-    if (!!!article) {
+    if (!!article) {
       this.setArticlePageMetatag(article);
     } else {
       this.setTopPageMetaTag();

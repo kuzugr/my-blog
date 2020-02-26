@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MeteTagService } from './mete-tag.service';
+import { MetaTagService } from './meta-tag.service';
 
 describe('MeteTagServiceService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: MeteTagService = TestBed.get(MeteTagService);
+    const service: MetaTagService = TestBed.get(MetaTagService);
     expect(service).toBeTruthy();
   });
 });
