@@ -22,6 +22,60 @@ body h2 {
   font-weight: bold;
 }
 
+.header {
+  padding-top: 120px;
+}
+
+.site-title-sub {
+  margin: 0 0 30px;
+  letter-spacing: 1px;
+  font-size: 2.2rem;
+}
+
+.site-title-sub::before,
+.site-title-sub::after {
+  content: '';
+  display: inline-block;
+  width: 140px;
+  height: 2px;
+  margin: 0 30px;
+  background-color: #fff;
+  vertical-align: middle;
+}
+
+.site-title {
+  margin: 50px 0 40px;
+  font-size: 5rem;
+}
+
+.site-title-a {
+  color: #fff;
+}
+
+.site-title-a:hover {
+  opacity: 0.9;
+}
+
+.site-description {
+  margin-bottom: 5px;
+  color: #888;
+  font-size: 1.6rem;
+}
+
+.pc-adsense {
+  display: inline-block;
+  margin: 5px 35px;
+}
+
+.sp-adsense {
+  margin: auto;
+}
+
+.footer {
+  padding: 12px 0;
+  font-size: 1.3rem;
+}
+
 .button {
   display: inline-block;
   width: 200px;
@@ -84,6 +138,22 @@ body h2 {
 }
 
 @media (max-width: 768px) {
+  .site-title-sub::before,
+  .site-title-sub::after {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  .site-title-sub {
+    font-size: 1.7rem;
+  }
+
+  .site-title {
+    margin-top: 35px;
+    font-size: 3rem;
+  }
+
   .button {
     width: 100px;
     padding: 10px;

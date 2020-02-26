@@ -18,7 +18,6 @@ import { EditAccountComponent } from './components/account/edit-account/edit-acc
 import { LoginComponent } from './components/account/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { CreateArticleComponent } from './components/article/create-article/create-article.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SafeHtmlPipe } from './shared/pipes/pipe.safehtml.pipe';
@@ -41,7 +40,6 @@ import { FileUploaderComponent } from './shared/components/file-uploader/file-up
     AppComponent,
     LayoutComponent,
     HeaderComponent,
-    FooterComponent,
     ArticleComponent,
     CreateAccountComponent,
     EditAccountComponent,
