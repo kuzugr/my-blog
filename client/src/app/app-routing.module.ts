@@ -5,8 +5,6 @@ import { CreateAccountComponent } from './components/account/create-account/crea
 import { EditAccountComponent } from './components/account/edit-account/edit-account.component';
 import { LoginComponent } from './components/account/login/login.component';
 import { CreateArticleComponent } from './components/article/create-article/create-article.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { ContactComponent } from './components/contact/contact.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { TopComponent } from './components/top/top.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
