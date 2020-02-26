@@ -4,6 +4,7 @@ import { Category } from '../../shared/models/category';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ValidateForm } from '../../shared/functions/validate-forms';
 import { Router } from '@angular/router';
+import { MetaTagService } from '../../shared/services/meta-tag.service';
 
 @Component({
   selector: 'app-search',
@@ -22,9 +23,10 @@ export class SearchComponent implements OnInit {
     },
   };
 
-  constructor(private categoryService: CategoryService, private router: Router) {}
+  constructor(private categoryService: CategoryService, private router: Router, private metaTagService: MetaTagService) {}
 
   ngOnInit() {
+    this.metaTagService.setMetaTag();
     this.categoryLoaded = false;
     this.form = new FormGroup({
       keyword: new FormControl('', [Validators.required, Validators.maxLength(50)]),

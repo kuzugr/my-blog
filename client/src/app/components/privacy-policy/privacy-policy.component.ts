@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MetaTagService } from '../../shared/services/meta-tag.service';
 
 @Component({
   selector: 'app-privacy-policy',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./privacy-policy.component.scss'],
 })
 export class PrivacyPolicyComponent implements OnInit {
-  constructor() {}
+  constructor(private metaTagService: MetaTagService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.metaTagService.setMetaTag();
+  }
 }

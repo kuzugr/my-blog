@@ -18,12 +18,10 @@ class SitemapService
     paths = []
     # TOP
     paths << ''
-    # プロフィール
-    paths << '/profile'
-    # お問い合わせ
-    paths << '/contact'
     # プライバシーポリシー
     paths << '/privacy-policy'
+    # 検索結果
+    paths << '/search'
     # 記事
     article_ids.each do |article_id|
       paths << "/article/#{article_id}"
@@ -36,7 +34,7 @@ class SitemapService
     file.puts('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
     path_list.each do |path|
       file.puts('  <url>')
-      file.puts("    <loc>#{ENV['CORS_ALLOW_HOST']}#{path}</loc>")
+      file.puts("    <loc>https://#{ENV['CORS_ALLOW_HOST']}#{path}</loc>")
       file.puts("    <lastmod>#{Time.zone.today.strftime('%Y-%m-%d')}</lastmod>")
       file.puts('    <changefreq>daily</changefreq>')
       file.puts('    <priority>1.0</priority>')
