@@ -69,6 +69,8 @@ body h2 {
 
 .sp-adsense {
   margin: auto;
+  position: relative;
+  z-index: 5;
 }
 
 .footer {
@@ -152,6 +154,10 @@ body h2 {
   .site-title {
     margin-top: 35px;
     font-size: 3rem;
+  }
+
+  .pc-adsense {
+    display: none;
   }
 
   .button {
