@@ -4,6 +4,7 @@ import { ArticleService } from '../../shared/services/article.service';
 import { Article } from '../../shared/models/article';
 import { Category } from '../../shared/models/category';
 import { CategoryService } from '../../shared/services/category.service';
+import { ArticleParameter } from '../../shared/parameters/article.parameter'
 
 @Component({
   selector: 'app-search-result',
@@ -11,7 +12,7 @@ import { CategoryService } from '../../shared/services/category.service';
   styleUrls: ['./search-result.component.scss'],
 })
 export class SearchResultComponent implements OnInit {
-  params: any;
+  params: ArticleParameter;
   articles: Array<Article>;
   nextPage: Number;
   previousPage: Number;
@@ -35,7 +36,9 @@ export class SearchResultComponent implements OnInit {
 
   getParamsAndSearch() {
     this.route.queryParams.subscribe((params) => {
-      this.params = params;
+      this.params.category_id = params['category_id'];
+      this.params.keyword = params['keyword'];
+      this.params.date = params['date'];
       this.searchArticle();
     });
   }
@@ -63,10 +66,7 @@ export class SearchResultComponent implements OnInit {
           this.searchTypeValue = this.params['date'];
         }
 
-        this.searchTypeLoaded = true;
-        if (this.params['category_id'] && this.params['category_id'] === 'all') {
-          this.searchTypeLoaded = false;
-        }
+        this.searchTypeLoaded = this.params['category_id'] === 0;
         this.articleLoaded = true;
       },
       (error) => {},
