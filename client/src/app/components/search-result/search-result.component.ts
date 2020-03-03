@@ -53,14 +53,11 @@ export class SearchResultComponent implements OnInit {
               this.setCategoryName(categories);
             }
           });
-        } else if (this.params['keyword']) {
+        } else {
           if (this.params['keyword']) {
             this.searcyType = 'キーワード';
             this.searchTypeValue = this.params['keyword'];
           }
-        } else {
-          this.searcyType = '月別アーカイブ';
-          this.searchTypeValue = this.params['date'];
         }
 
         this.searchTypeLoaded = true;

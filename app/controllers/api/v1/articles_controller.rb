@@ -72,12 +72,6 @@ module Api
         render status: 200, json: response
       end
 
-      def archive
-        archives = Article.where(published: true).monthly_archive
-        archive_response_service = Articles::ArchiveResponseService.new(archives)
-        render status: 200, json: archive_response_service.call
-      end
-
       def update_publish_status
         article = Article.find(params[:id])
         after_status = article.published ? false : true
@@ -139,13 +133,11 @@ module Api
       end
 
       def search_parms_valid?
-        params[:category_id].present? || params[:keyword].present? || params[:date].present?
+        params[:category_id].present? || params[:keyword].present?
       end
 
       def searched_articles
-        if params[:date]
-          Article.with_thumbnail(published_option).by_date(params[:date])
-        elsif params[:category_id]
+        if params[:category_id]
           search_by_category
         else
           Article.with_thumbnail(published_option).by_keyword(params[:keyword])
