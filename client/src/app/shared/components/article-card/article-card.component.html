@@ -8,7 +8,7 @@
           <li class="article-tags">
             <ul>
               <li>
-                <a [routerLink]="['/search']" [queryParams]="{ category_id: article.category_id }" fragment='search-result'>
+                <a href="{{'/search?category_id=' + article.category_id + '#search-result'}}">
                   {{article.category}}
                 </a>
               </li>
@@ -17,7 +17,7 @@
         </ul>
         <div class="article-description">
           <p>{{article.title}}</p>
-          <a [routerLink]="['/article', article.id]">READ MORE</a>
+          <a href="{{'/article/' + article.id + '#main'}}">READ MORE</a>
         </div>
       </div>
     </div>
