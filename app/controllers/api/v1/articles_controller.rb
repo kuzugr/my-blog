@@ -60,7 +60,7 @@ module Api
       def search
         render_invalid_request && return unless search_parms_valid?
 
-        articles = searched_articles.page(params[:page] || 1).per(12)
+        articles = searched_articles.page(params[:page] || 1).per(10)
         response_articles = articles.map do |article|
           ArticleSerializer.new(article, { include_thumbnail: true })
         end
