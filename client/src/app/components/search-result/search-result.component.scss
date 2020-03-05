@@ -18,3 +18,29 @@
 .next-button {
   float: right;
 }
+
+.ads {
+  display: table;
+  margin: 60px 0 auto;
+  margin-bottom: -90px;
+}
+
+.ad {
+  display: table-cell;
+  padding: 5px;
+  background-color: transparent;
+  color: #4d4d4d;
+}
+
+@media (max-width: 768px) {
+  .ads {
+    display: none;
+  }
+
+  .sp-top-ad {
+    display: block;
+    width: 100%;
+    margin-bottom: -80px;
+  }
+}
+
