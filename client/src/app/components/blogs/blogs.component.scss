@@ -2,3 +2,34 @@
   background-attachment: #383634;
   padding: 50px 0;
 }
+
+.ads {
+  display: table;
+  margin: 60px auto -90px;
+}
+
+.ad {
+  display: table-cell;
+  padding: 15px;
+  background-color: transparent;
+  color: #4d4d4d;
+}
+
+@media (max-width: 768px) {
+  .ads {
+    display: none;
+  }
+
+  .ad {
+    padding: 0 15px;
+  }
+
+  .sp-top-ad {
+    display: block;
+    margin-bottom: -75px;
+  }
+
+  .margin-bottom {
+    margin-bottom: 50px;
+  }
+}
