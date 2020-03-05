@@ -6,11 +6,11 @@
     </form>
     <div class="buttons" *ngIf="categoryLoaded">
       <ng-container *ngFor="let category of categories">
-        <a class="button" [routerLink]="['/search']" [queryParams]="{ category_id: category.id }" fragment='search-result'>
+        <a class="button" href="{{'/search?category_id=' + category.id  + '#search-result'}}">
           {{category.name}}
         </a>
       </ng-container>
-      <a class="button button-showy" [routerLink]="['/search']" [queryParams]="{ category_id: 'all' }" fragment='search-result'>
+      <a class="button button-showy" href="{{'/search?category_id=all#search-result'}}">
         記事一覧
       </a>
     </div>
