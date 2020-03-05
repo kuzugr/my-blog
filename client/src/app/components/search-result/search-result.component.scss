@@ -27,7 +27,7 @@
 
 .ad {
   display: table-cell;
-  padding: 5px;
+  padding: 5px 15px;
   background-color: transparent;
   color: #4d4d4d;
 }
@@ -37,10 +37,13 @@
     display: none;
   }
 
+  .ad {
+    padding: 0 15px;
+  }
+
   .sp-top-ad {
     display: block;
-    width: 100%;
-    margin-bottom: -80px;
+    margin-bottom: -75px;
   }
 }
 
