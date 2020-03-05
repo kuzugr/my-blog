@@ -167,6 +167,23 @@
   margin-bottom: 10px;
 }
 
+.ads {
+  display: table;
+  margin: 60px auto -90px
+}
+
+.ad {
+  display: table-cell;
+  padding: 15px;
+  background-color: transparent;
+  color: #4d4d4d;
+}
+
+.sp-top-ad {
+  margin-top: 15px;
+  display: block;
+}
+
 @media (max-width: 768px) {
   .title {
     font-size: 2rem;
@@ -189,5 +206,13 @@
     img {
       max-width: 250px;
     }
+  }
+
+  .ad {
+    padding: 0 15px;
+  }
+
+  .ads {
+    display: none;
   }
 }
