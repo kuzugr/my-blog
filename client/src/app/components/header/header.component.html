@@ -4,7 +4,7 @@
     <a class="button button-showy" href="/#blogs">BLOGS</a>
     <a class="button" href="/#search">SEARCH</a>
     <a class="button button-showy" href="/#contact">CONTACT</a>
-    <a class="button" [routerLink]="['/privacy-policy']">PRIVACY POLICY</a>
+    <a class="button" [routerLink]="['/privacy-policy']" fragment='privacy-policy'>PRIVACY POLICY</a>
     <a class="button button-showy" [routerLink]="['/article/create']" *ngIf="loginState">CREATE</a>
   </div>
 </header>
