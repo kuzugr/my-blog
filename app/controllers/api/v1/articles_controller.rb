@@ -4,7 +4,7 @@ module Api
   module V1
     class ArticlesController < ApplicationController
       skip_before_action :authenticate_user_from_token!,
-        only: [:index, :show, :search, :archive]
+        only: [:index, :show, :search]
       before_action :delay_response, only: [:index, :show, :search]
 
       def index
@@ -71,12 +71,6 @@ module Api
           previous_page: articles.prev_page,
         }
         render status: 200, json: response
-      end
-
-      def archive
-        archives = Article.where(published: true).monthly_archive
-        archive_response_service = Articles::ArchiveResponseService.new(archives)
-        render status: 200, json: archive_response_service.call
       end
 
       def update_publish_status
