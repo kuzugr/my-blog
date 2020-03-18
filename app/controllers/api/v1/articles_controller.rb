@@ -5,6 +5,7 @@ module Api
     class ArticlesController < ApplicationController
       skip_before_action :authenticate_user_from_token!,
         only: [:index, :show, :search, :archive]
+      before_action :delay_response, only: [:index, :show, :search]
 
       def index
         limit = params[:limit] || 5
@@ -162,6 +163,11 @@ module Api
 
       def tweet_message(article)
         "#{article.title}\n\n#{ENV['CORS_ALLOW_HOST']}/article/#{article.id}"
+      end
+
+      # あえてレスポンスを遅くする
+      def delay_response
+        sleep(1.8)
       end
     end
   end
