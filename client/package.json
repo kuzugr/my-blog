@@ -39,7 +39,7 @@
         "font-awesome": "4.7.0",
         "ng2-adsense": "7.0.0",
         "ngx-markdown": "8.2.2",
-        "rxjs": "6.5.4",
+        "rxjs": "6.6.7",
         "rxjs-compat": "6.5.4",
         "yarn": "1.22.4",
         "zone.js": "0.10.3"
